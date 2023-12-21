@@ -1,4 +1,5 @@
 # REPORTE DE INGRESO DE NÚMEROS
+
 import os
 
 ingresados = []
