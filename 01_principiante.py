@@ -1,16 +1,17 @@
+# SUMATORIA DE 3 NÚMEROS POSITIVOS
+
+nums = []
 isNegative = True
-sum = 0
-contador = 0
+suma = 0
 
-while (contador < 3):
-    while (isNegative):
-        num = int(input("Ingrese el número "))
-        if (num >= 0):
-            sum = sum + num
-            contador = contador + 1
-            if (contador == 3):
-                isNegative = False
-        else:
-            isNegative = False
+while (isNegative):
+    num = int(input("Ingrese el número : "))
+    if (num >= 0):
+        nums.append(num)
+    else:
+        print("Ingrese un número entero positivo")
+    if (len(nums) == 3):
+        isNegative = False
+        suma = sum(nums)
 
-print("La sumatoria de los números es", sum)
+print("La sumatoria de los números es", suma)
