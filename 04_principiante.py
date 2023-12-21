@@ -1,3 +1,5 @@
+# REPORTE DE INGRESO DE NÚMEROS
+
 ingresados = []
 paresIngresados = []
 imparesIngresados = []
@@ -28,7 +30,7 @@ while (isPositive):
 promedioPares = sum(paresIngresados)/len(paresIngresados)
 promedioImpares = sum(imparesIngresados)/len(imparesIngresados)
 
-print("RESUMEN")
+print("REPORTE")
 print("Total de números ingresados : ", len(ingresados))
 print("Total de números pares ingresados : ", len(paresIngresados))
 print("Promedio de los números pares : ", promedioPares)
