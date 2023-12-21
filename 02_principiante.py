@@ -1,15 +1,34 @@
 # CÁLCULO IMC DE ESTUDIANTES
 
+import os
+
 header = """
-***********
-CÁLCULO IMC
-***********
+*******************************
+\tCÁLCULO IMC
+*******************************
 """
 
+def verify(valorDato, nombreDato, tipoDato):
+    valorDato = 0
+    isIncorrect = True
+    while (isIncorrect):
+        try:
+            valorDato = tipoDato(input(f"Ingrese {nombreDato} del estudiante : "))
+        except ValueError:
+            print("Ingrese un dato válido")
+        else:
+            if (valorDato <= 0):
+                print("Ingrese un número positivo")
+            else:
+                isIncorrect = False
+    return valorDato
+
 nombre = input("Ingrese el nombre del estudiante : ")
-edad = int(input("Ingrese la edad del estudiante : "))
-peso = int(input("Ingrese el peso del estudiante : "))
-altura = float(input("Ingrese la altura del estudiante : "))
+valor = 0
+edad = verify(valor, "edad", int)
+peso = verify(valor, "peso", float)
+altura = verify(valor, "altura", float)
+
 imc = peso/pow(altura, 2)
 categoria = ""
 estudiante = [nombre, edad, peso, altura, imc, categoria]
@@ -25,8 +44,9 @@ elif (imc >= 35 and imc <= 39.9):
 elif (imc > 40):
     estudiante[5] = "Obesidad III"
 
+os.system("cls")
 print(header)
-print("Nombre: ", estudiante[0])
-print("Edad: ", estudiante[1])
-print("IMC: ", estudiante[4])
-print("Categoría: ", estudiante[5])
+print("Nombre:    \t", estudiante[0])
+print("Edad:      \t", estudiante[1])
+print("IMC:       \t", estudiante[4])
+print("Categoría: \t", estudiante[5])
