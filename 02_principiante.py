@@ -6,10 +6,10 @@ CÁLCULO IMC
 ***********
 """
 
-nombre = input("Ingrese el nombre del estudiante ")
-edad = int(input("Ingrese la edad del estudiante "))
-peso = int(input("Ingrese el peso del estudiante "))
-altura = float(input("Ingrese la altura del estudiante "))
+nombre = input("Ingrese el nombre del estudiante : ")
+edad = int(input("Ingrese la edad del estudiante : "))
+peso = int(input("Ingrese el peso del estudiante : "))
+altura = float(input("Ingrese la altura del estudiante : "))
 imc = peso/pow(altura, 2)
 categoria = ""
 estudiante = [nombre, edad, peso, altura, imc, categoria]
