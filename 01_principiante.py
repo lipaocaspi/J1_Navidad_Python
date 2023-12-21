@@ -5,11 +5,15 @@ isNegative = True
 suma = 0
 
 while (isNegative):
-    num = int(input("Ingrese el número : "))
-    if (num >= 0):
-        nums.append(num)
+    try:
+        num = int(input("Ingrese el número : "))
+    except ValueError:
+        print("Ingrese un dato válido")
     else:
-        print("Ingrese un número entero positivo")
+        if (num >= 0):
+            nums.append(num)
+        else:
+            print("Ingrese un número entero positivo")
     if (len(nums) == 3):
         isNegative = False
         suma = sum(nums)
