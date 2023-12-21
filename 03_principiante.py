@@ -12,7 +12,7 @@ contadorObesidadII = 0
 contadorObesidadIII = 0
 contadorSobrepeso = 0
 
-for i in range(1, 20):
+for i in range(1, 21):
     nombre = input("Ingrese el nombre del estudiante : ")
     edad = int(input("Ingrese la edad del estudiante : "))
     peso = int(input("Ingrese el peso del estudiante : "))
