@@ -32,20 +32,23 @@ while (isActive):
             os.system("cls")
             producto.mostrarInventario()
         elif (opMenu == 3):
-            isIncorrect = True
-            os.system("cls")
-            while (isIncorrect):
-                try:
-                    codigo = int(input(f"Ingrese código del producto que desee actualizar stock : "))
-                except ValueError:
-                    print(f"Ingrese un dato válido")
-                else:
-                    if (len(str(codigo)) != 3):
-                        print(f"Ingrese un código de 3 cifras")
+            rta = "S"
+            while (rta in ["S", "s"]):
+                isIncorrect = True
+                os.system("cls")
+                while (isIncorrect):
+                    try:
+                        codigo = int(input(f"Ingrese código del producto que desee actualizar stock : "))
+                    except ValueError:
+                        print(f"Ingrese un dato válido")
                     else:
-                        producto.buscarProducto(codigo)
-                        isIncorrect = False
-            producto.actStock()
+                        if (len(str(codigo)) != 3):
+                            print(f"Ingrese un código de 3 cifras")
+                        else:
+                            producto.buscarProducto(codigo)
+                            isIncorrect = False
+                producto.actStock()
+                rta = input(f"¿Desea registrar otra actualización de stock? : ")
         elif (opMenu == 4):
             os.system("cls")
             producto.imprimirInforme()
