@@ -30,6 +30,7 @@ def mostrarInventario():
 
 def buscarProducto(codigoProducto : int) -> int:
     global indice
+    indice = -1
     for item in productos:
         if codigoProducto in item:
             indice = productos.index(item)
