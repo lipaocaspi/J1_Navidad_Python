@@ -17,7 +17,7 @@ while (isActive):
             while (rta in ["S", "s"]):
                 os.system("cls")
                 valor = 0
-                codigo = producto.regProducto(valor, "código", int)
+                codigo = producto.regProducto(valor, "código (3 cifras)", int)
                 nombre = producto.regProducto(valor, "nombre", str)
                 valorCompra = producto.regProducto(valor, "valor de compra", float)
                 valorVenta = producto.regProducto(valor, "valor de venta", float)
@@ -27,7 +27,7 @@ while (isActive):
                 nombreProveedor = producto.regProducto(valor, "nombre del proveedor", str)
                 producto.productos.append(producto.registroProducto)
                 producto.registroProducto = []
-                rta = input(f"¿Desea registrar otro producto?")
+                rta = input(f"¿Desea registrar otro producto? : ")
         elif (opMenu == 2):
             os.system("cls")
             producto.mostrarInventario()
@@ -40,8 +40,11 @@ while (isActive):
                 except ValueError:
                     print(f"Ingrese un dato válido")
                 else:
-                    producto.buscarProducto(codigo) # REVISAR ESTA FUNCIÓN
-                    isIncorrect = False
+                    if (len(str(codigo)) != 3):
+                        print(f"Ingrese un código de 3 cifras")
+                    else:
+                        producto.buscarProducto(codigo)
+                        isIncorrect = False
             isIncorrect = True
             while (isIncorrect):
                 if (producto.indice < 0):
@@ -62,6 +65,7 @@ while (isActive):
             producto.imprimirInforme()
         elif (opMenu == 5):
             os.system("cls")
+            producto.calGanaciaP()
         elif (opMenu == 6):
             isActive = False
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
