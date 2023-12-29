@@ -45,21 +45,7 @@ while (isActive):
                     else:
                         producto.buscarProducto(codigo)
                         isIncorrect = False
-            isIncorrect = True
-            while (isIncorrect):
-                if (producto.indice < 0):
-                    isIncorrect = False
-                else:
-                    try:
-                        stock = int(input(f"Ingrese el valor del stock que desee agregar o restar (ingrese un número negativo en ese caso) : "))
-                    except ValueError:
-                        print(f"Ingrese un dato válido")
-                    else:
-                        if (stock < 0 and abs(stock) > producto.productos[producto.indice][6]):
-                            print(f"No es posible realizar esta actualización, el valor del stock no puede ser menor a 0")
-                        else:
-                            producto.productos[producto.indice][6] = int(producto.productos[producto.indice][6]) + stock
-                            isIncorrect = False
+            producto.actStock()
         elif (opMenu == 4):
             os.system("cls")
             producto.imprimirInforme()

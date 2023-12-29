@@ -37,6 +37,23 @@ def buscarProducto(codigoProducto : int) -> int:
         print(f"No se encontró el producto")
     return indice
 
+def actStock():
+    isIncorrect = True
+    while (isIncorrect):
+        if (indice < 0):
+            isIncorrect = False
+        else:
+            try:
+                stock = int(input(f"Ingrese el valor del stock que desee agregar o restar (ingrese un número negativo en ese caso) : "))
+            except ValueError:
+                print(f"Ingrese un dato válido")
+            else:
+                if (stock < 0 and abs(stock) > productos[indice][6]):
+                    print(f"No es posible realizar esta actualización, el valor del stock no puede ser menor a 0")
+                else:
+                    productos[indice][6] = int(productos[indice][6]) + stock
+                    isIncorrect = False
+
 def imprimirInforme():
     print(f"INFORME DE PRODUCTOS CRÍTICOS")
     print(f"------------------------------------------------------------------------------------------------------------------------")
