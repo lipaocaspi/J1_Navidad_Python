@@ -32,6 +32,7 @@ estudiantes = []
 
 for i in range(1, 21):
     os.system("cls")
+    print(header)
     nombre = input(f"Ingrese el nombre del estudiante : ")
     valor = 0
     edad = verify(valor, "edad", int)

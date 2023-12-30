@@ -2,6 +2,12 @@
 
 import os
 
+header = """
+****************************************
+\tREPORTE
+****************************************
+"""
+
 ingresados = []
 paresIngresados = []
 imparesIngresados = []
@@ -12,11 +18,13 @@ veinteCincuenta = []
 mayoresCien = []
 isPositive = True
 
+os.system("cls")
+
 while (isPositive):
     try:
-        num = int(input("Ingrese el número : "))
+        num = int(input(f"Ingrese el número : "))
     except:
-        print("Ingrese un dato válido")
+        print(f"Ingrese un dato válido")
     else:
         if (num >= 0):
             ingresados.append(num)
@@ -37,11 +45,15 @@ promedioPares = sum(paresIngresados)/len(paresIngresados)
 promedioImpares = sum(imparesIngresados)/len(imparesIngresados)
 
 os.system("cls")
-print("REPORTE")
-print("Total de números ingresados : ", len(ingresados))
-print("Total de números pares ingresados : ", len(paresIngresados))
-print("Promedio de los números pares : ", promedioPares)
-print("Promedio de los números impares : ", promedioImpares)
-print("Total de números menores que 10 : ", len(menoresDiez))
-print("Total de números entre 20 y 50 : ", len(veinteCincuenta))
-print("Total de números mayores que 100 : ", len(mayoresCien))
+
+print(header)
+print(f"Total de números ingresados : {len(ingresados)}" )
+print(f"Total de números pares ingresados : {len(paresIngresados)}")
+print(f"Promedio de los números pares : {promedioPares}")
+print(f"Promedio de los números impares : {promedioImpares}")
+print(f"Total de números menores que 10 : {len(menoresDiez)}")
+print(f"Total de números entre 20 y 50 : {len(veinteCincuenta)}")
+print(f"Total de números mayores que 100 : {len(mayoresCien)}")
+print(f"")
+
+os.system("pause")
