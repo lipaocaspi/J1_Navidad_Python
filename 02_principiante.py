@@ -28,8 +28,8 @@ os.system("cls")
 nombre = input(f"Ingrese el nombre del estudiante : ")
 valor = 0
 edad = verify(valor, "edad", int)
-peso = verify(valor, "peso", float)
-altura = verify(valor, "altura", float)
+peso = verify(valor, "peso (en kilos)", float)
+altura = verify(valor, "altura (en metros)", float)
 
 imc = peso/pow(altura, 2)
 categoria = ""
