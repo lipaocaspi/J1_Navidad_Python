@@ -35,6 +35,7 @@ def menuDependencia():
             if(opMenu == 1):
                 isIncorrect = True
                 while (isIncorrect):
+                    os.system("cls")
                     try:
                         codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
@@ -49,10 +50,12 @@ def menuDependencia():
                             while (rta in ["S", "s"]):
                                 dependencias.regConsumoDispositivos(dependencias.indice)
                                 rta = input(f"¿Desea registrar otro dispositivo? : ")
+                            os.system("pause")
                         isIncorrect = False
             elif(opMenu == 2):
                 isIncorrect = True
                 while (isIncorrect):
+                    os.system("cls")
                     try:
                         codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
@@ -67,9 +70,9 @@ def menuDependencia():
                             while (rta in ["S", "s"]):
                                 dependencias.regConsumoTransporte(dependencias.indice)
                                 rta = input(f"¿Desea registrar otro transporte? : ")
+                            os.system("pause")
                         isIncorrect = False
             elif(opMenu == 3):
                 isActiveMenu = False
             else:
                 print("La opción ingresada es inválida")
-            # os.system("pause")

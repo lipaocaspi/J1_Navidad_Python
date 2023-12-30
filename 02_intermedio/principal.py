@@ -22,7 +22,6 @@ while (isActive):
                 co2Producido = 0
                 dependencia.registroDependencia = [codigo, nombre, [], [], co2Producido]
                 dependencia.dependencias.append(dependencia.registroDependencia)
-                print(dependencia.dependencias)
                 rta = input(f"¿Desea registrar otra dependencia? : ")
         elif (opMenu == 2):
             os.system("cls")
@@ -32,6 +31,13 @@ while (isActive):
             dependencia.calcularEmisiones()
         elif (opMenu == 4):
             os.system("cls")
+            max = 0
+            nomMax = ""
+            for i in range(len(dependencia.dependencias)):
+                if (float(dependencia.dependencias[i][4]) > max):
+                    max = float(dependencia.dependencias[i][4])
+                    nomMax = dependencia.dependencias[i][1]
+            print(f"DEPENDENCIA QUE PRODUCE MAYOR C02 : {nomMax}")
         elif (opMenu == 5):
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
             isActive = False
