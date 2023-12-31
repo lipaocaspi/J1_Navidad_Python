@@ -1,11 +1,11 @@
 import os
 import menus as menu
-import jugadores as jugador
 
 isActive = True
 opMenu = 0
 
 while (isActive):
+    os.system("cls")
     try:
         opMenu = menu.menuPrincipal()
     except ValueError:
@@ -13,14 +13,13 @@ while (isActive):
     else:
         if (opMenu == 1):
             menu.menuRegistroJ()
-            # jugadores.update(jugador.regJugador())
         elif (opMenu == 2):
-            pass
+            menu.menuRegistroP()
         elif (opMenu == 3):
             pass
         elif (opMenu == 4):
             pass
         elif (opMenu == 5):
             isActive = False
-
-os.system("pause")
+            print(f"GRACIAS POR USAR NUESTRO SERVICIO")
+            os.system("pause")

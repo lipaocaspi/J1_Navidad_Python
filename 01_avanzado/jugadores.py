@@ -1,15 +1,14 @@
 import os
 import categorias as categoria
 
-def regJugador() -> dict:
-    id = input(f"Ingrese el código del jugador")
-    nombre = input(f"Ingrese el nombre del jugador")
-    edad = int(input(f"Ingrese la edad del jugador"))
-    categoriaJ = categoria.defCategoria(edad)
+def regJugador(categoriaJugador : int, edadJugador : int) -> dict:
+    id = input(f"Ingrese el código del jugador : ")
+    nombre = input(f"Ingrese el nombre del jugador : ")
+    categoriaJ = categoria.defCategoria(categoriaJugador)
     jugador = {
         "Id" : id,
         "Nombre" : nombre,
-        "Edad" : edad,
+        "Edad" : edadJugador,
         "Categoria" : categoriaJ,
         "PJ" : 0,
         "PG" : 0,
@@ -18,3 +17,6 @@ def regJugador() -> dict:
         "TP" : 0
     }
     return {id : jugador}
+
+def buscarJugador():
+    return 0
