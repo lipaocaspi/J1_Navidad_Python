@@ -1,9 +1,9 @@
-def defCategoria(edadJugador : int) -> str:
+def defCategoria(categoriaJ : int) -> str:
     categoria = ""
-    if (edadJugador >= 15 and edadJugador <= 16):
+    if (categoriaJ == 1):
         categoria = "Novato"
-    elif (edadJugador >= 17 and edadJugador <= 20):
+    elif (categoriaJ == 2):
         categoria = "Intermedio"
-    elif (edadJugador > 20):
+    elif (categoriaJ == 3):
         categoria = "Avanzado"
     return categoria
