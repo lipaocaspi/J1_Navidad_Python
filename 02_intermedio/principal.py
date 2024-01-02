@@ -4,6 +4,11 @@ import dependencias as dependencia
 
 isActive = True
 opMenu = 0
+headerD = """
+************************
+* REGISTRO DEPENDENCIA *
+************************
+"""
 
 while (isActive):
     os.system("cls")
@@ -16,19 +21,23 @@ while (isActive):
             rta = "S"
             while(rta in ["S", "s"]):
                 os.system("cls")
+                print(headerD)
                 valor = 0
                 codigo = dependencia.regDependencia(valor, "código (3 cifras)", int)
                 nombre = dependencia.regDependencia(valor, "nombre", str)
                 co2Producido = 0
                 dependencia.registroDependencia = [codigo, nombre, [], [], co2Producido]
                 dependencia.dependencias.append(dependencia.registroDependencia)
-                rta = input(f"¿Desea registrar otra dependencia? : ")
+                rta = input(f"¿Desea registrar otra dependencia? S(Sí) o Enter(No) : ")
+            print(f"")
         elif (opMenu == 2):
             os.system("cls")
             menu.menuDependencia()
+            print(f"")
         elif (opMenu == 3):
             os.system("cls")
             dependencia.calcularEmisiones()
+            print(f"")
         elif (opMenu == 4):
             os.system("cls")
             max = 0
@@ -38,8 +47,11 @@ while (isActive):
                     max = float(dependencia.dependencias[i][4])
                     nomMax = dependencia.dependencias[i][1]
             print(f"DEPENDENCIA QUE PRODUCE MAYOR C02 : {nomMax}")
+            print(f"")
         elif (opMenu == 5):
+            print(f"")
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
+            print(f"")
             isActive = False
         else:
             print(f"Ingrese una opción válida")

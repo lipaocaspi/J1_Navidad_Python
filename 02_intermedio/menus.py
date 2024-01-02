@@ -7,35 +7,54 @@ subMenuDependencias = "1. Dispositivos\n2. Transporte\n3. Regresar al menu princ
 def menuPrincipal() -> int:
     global hasError
     hasError = True
+    headerP = """
+    **************************************************
+    *           CÁLCULO DE CO2 PRODUCIDO             *
+    **************************************************
+    """
+    print(headerP)
     print(menu)
     while (hasError):
         try:
-            return int(input("Ingrese una opción : "))
+            print(f"")
+            return int(input(f"Ingrese una opción : "))
         except ValueError:
             hasError = True
 
 def menuDependencia():
     os.system("cls")
-    header = """
+    headerD = """
     *************************************************
     *   MENU REGISTRO DE CONSUMO POR DEPENDENCIA    *
     *************************************************
+    """
+    headerCD = """
+    ********************************
+    * REGISTRO CONSUMO DISPOSITIVO *
+    ********************************
+    """
+    headerCT = """
+    *******************************
+    * REGISTRO CONSUMO TRANSPORTE *
+    *******************************
     """
     isActiveMenu = True
     isIncorrect = True
     while (isActiveMenu):
         os.system("cls")
-        print(header)
+        print(headerD)
         try:
             print(subMenuDependencias)
-            opMenu = int(input("Ingrese una opción : "))
+            print(f"")
+            opMenu = int(input(f"Ingrese una opción : "))
         except ValueError:
-            print("Opción inválida")
+            print(f"Opción inválida")
         else:
             if(opMenu == 1):
                 isIncorrect = True
+                os.system("cls")
+                print(headerCD)
                 while (isIncorrect):
-                    os.system("cls")
                     try:
                         codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
@@ -44,18 +63,22 @@ def menuDependencia():
                         dependencias.buscarDependencia(codigo)
                         if (dependencias.indice == -1):
                             print(f"No se encontró dependencia")
+                            print(f"")
                             os.system("pause")
                         else:
                             rta = "S"
                             while (rta in ["S", "s"]):
                                 dependencias.regConsumoDispositivos(dependencias.indice)
-                                rta = input(f"¿Desea registrar otro dispositivo? : ")
+                                rta = input(f"¿Desea registrar otro dispositivo? S(Sí) o Enter(No) : ")
+                            print(f"")
                             os.system("pause")
                         isIncorrect = False
+                print(f"")
             elif(opMenu == 2):
                 isIncorrect = True
+                os.system("cls")
+                print(headerCT)
                 while (isIncorrect):
-                    os.system("cls")
                     try:
                         codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
@@ -64,15 +87,17 @@ def menuDependencia():
                         dependencias.buscarDependencia(codigo)
                         if (dependencias.indice == -1):
                             print(f"No se encontró dependencia")
+                            print(f"")
                             os.system("pause")
                         else:
                             rta = "S"
                             while (rta in ["S", "s"]):
                                 dependencias.regConsumoTransporte(dependencias.indice)
-                                rta = input(f"¿Desea registrar otro transporte? : ")
+                                rta = input(f"¿Desea registrar otro transporte? S(Sí) o Enter(No) : ")
+                            print(f"")    
                             os.system("pause")
                         isIncorrect = False
             elif(opMenu == 3):
                 isActiveMenu = False
             else:
-                print("La opción ingresada es inválida")
+                print(f"La opción ingresada es inválida")
