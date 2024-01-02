@@ -1,8 +1,8 @@
-# REPORTE DE INGRESO DE NÚMEROS
+# REPORTE DE INGRESO DE NÚMEROS ENTEROS POSITIVOS
 
 import os
 
-header = """
+headerR = """
 ****************************************
 \tREPORTE
 ****************************************
@@ -20,6 +20,7 @@ isPositive = True
 
 os.system("cls")
 
+print(f"INGRESE NÚMEROS ENTEROS POSITIVOS (CUANDO DESEE PARAR INGRESE UN NÚMERO ENTERO NEGATIVO)")
 while (isPositive):
     try:
         num = int(input(f"Ingrese el número : "))
@@ -40,13 +41,14 @@ while (isPositive):
                 mayoresCien.append(num)
         else:
             isPositive = False
+os.system("pause")
 
 promedioPares = sum(paresIngresados)/len(paresIngresados)
 promedioImpares = sum(imparesIngresados)/len(imparesIngresados)
 
 os.system("cls")
 
-print(header)
+print(headerR)
 print(f"Total de números ingresados : {len(ingresados)}" )
 print(f"Total de números pares ingresados : {len(paresIngresados)}")
 print(f"Promedio de los números pares : {promedioPares}")
