@@ -6,6 +6,7 @@ def menuShow() -> int:
     print(menuP)
     while (hasError):
         try:
+            print(f"")
             return int(input(f"Ingrese una opción : "))
         except ValueError:
             hasError = True

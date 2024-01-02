@@ -26,7 +26,6 @@ def mostrarInventario():
     print("{:<10} {:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format("CÓDIGO", "NOMBRE", "VALOR COMPRA", "VALOR VENTA", "STOCK MÍNIMO", "STOCK MÁXIMO", "STOCK ACTUAL", "NOMBRE PROVEEDOR"))
     for i in range(len(productos)):
         print("{:<10} {:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format(productos[i][0], productos[i][1], productos[i][2], productos[i][3], productos[i][4], productos[i][5], productos[i][6], productos[i][7]))
-    print(f"")
 
 def buscarProducto(codigoProducto : int) -> int:
     global indice
@@ -62,7 +61,6 @@ def imprimirInforme():
     for i in range(len(productos)):
         if (productos[i][6] < productos[i][4]):
             print("{:<10} {:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format(productos[i][0], productos[i][1], productos[i][2], productos[i][3], productos[i][4], productos[i][5], productos[i][6], productos[i][7]))
-    print(f"")
 
 def calGanaciaP() -> int:
     suma = 0
