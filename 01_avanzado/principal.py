@@ -8,6 +8,7 @@ while (isActive):
     os.system("cls")
     try:
         opMenu = menu.menuPrincipal()
+        print(f"")
     except ValueError:
         print(f"Ingrese un dato válido")
     else:
@@ -21,5 +22,6 @@ while (isActive):
             menu.menuGanadores()
         elif (opMenu == 5):
             isActive = False
+            print(f"")
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
             os.system("pause")

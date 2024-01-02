@@ -69,7 +69,9 @@ def actualizarJugador(codJugador: str, jugadores : dict, puntosA : int, partidos
     data.update({"TP" : TP})
 
 def mostrarTabla(jugadores : dict):
+    print(f"")
     print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("ID", "JUGADOR", "PJ", "PG", "PP", "PA", "TP"))
+    print(f"-----------------------------------------------------------------------")
     for item in jugadores:
         print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(jugadores[item]["Id"], jugadores[item]["Nombre"], jugadores[item]["PJ"], jugadores[item]["PG"], jugadores[item]["PP"], jugadores[item]["PA"], jugadores[item]["TP"]))
     print(f"")

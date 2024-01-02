@@ -22,7 +22,7 @@ def verificarTipo(valorDato, nombreDato, tipoDato):
         
 def verificarPartido(id1 : str, id2 : str, partidos : dict) -> int:
     for item in partidos:
-        if ((id1 == partidos[item]["cont1"]) or (id1 == partidos[item]["cont2"]) and (id2 == partidos[item]["cont1"]) or (id2 == partidos[item]["cont2"])):
+        if (((id1 == partidos[item]["cont1"]) or (id1 == partidos[item]["cont2"])) and ((id2 == partidos[item]["cont1"]) or (id2 == partidos[item]["cont2"]))):
             print(f"Este partido ya está registrado")
             return 0
 

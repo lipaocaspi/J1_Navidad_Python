@@ -7,14 +7,41 @@ jugadoresIntermedios = {}
 jugadoresAvanzados = {}
 menuP = "1. Registrar Jugador\n2. Registrar Partido\n3. Tabla de puntajes\n4. Ganador de cada categoría\n5. Salir"
 menuRegJ = "1. Novato (15-16 años)\n2. Intermedio (17-20 años)\n3. Avanzado (Mayor de 20 años)\n4. Volver"
+headerP = """
+***********************************************
+BIENVENIDO AL TORNEO DE TENIS DE MESA DE CAMPUS
+***********************************************
+"""
+headerRJ = """
+***********************************************
+REGISTRO DE JUGADORES
+***********************************************
+"""
+headerRP = """
+***********************************************
+REGISTRO DE PARTIDOS
+***********************************************
+"""
+headerTablas = """
+***********************************************
+TABLA DE PUNTAJES
+***********************************************
+"""
+headerGanadores = """
+***********************************************
+GANADORES POR CATEGORÍA
+***********************************************
+"""
 hasError = True
 
 def menuPrincipal() -> int:
     global hasError
     hasError = True
+    print(headerP)
     print(menuP)
     while (hasError):
         try:
+            print(f"")
             return int(input(f"Ingrese una opción : "))
         except ValueError:
             hasError = True
@@ -26,8 +53,11 @@ def menuRegistroJ():
     while (isActive):
         os.system("cls")
         try:
+            print(headerRJ)
             print(menuRegJ)
+            print(f"")
             opMenu = int(input(f"Ingrese una opción : "))
+            print(f"")
         except ValueError:
             print(f"Ingrese una opción válida")
         else:
@@ -57,12 +87,14 @@ def menuRegistroP():
     os.system("pause")
     os.system("cls")
     isActive = True
-
     while (isActive):
         os.system("cls")
         try:
+            print(headerRP)
             print(menuRegJ)
+            print(f"")
             opMenu = int(input(f"Ingrese una opción : "))
+            print(f"")
         except ValueError:
             print(f"Ingrese una opción válida")
         else:
@@ -104,8 +136,11 @@ def menuTablas():
     while (isActive):
         os.system("cls")
         try:
+            print(headerTablas)
             print(menuRegJ)
+            print(f"")
             opMenu = int(input(f"Ingrese una opción : "))
+            print(f"")
         except ValueError:
             print(f"Ingrese una opción válida")
         else:
@@ -126,32 +161,44 @@ def menuGanadores():
     while (isActive):
         os.system("cls")
         try:
+            print(headerGanadores)
             print(menuRegJ)
+            print(f"")
             opMenu = int(input(f"Ingrese una opción : "))
+            print(f"")
         except ValueError:
             print(f"Ingrese una opción válida")
         else:
             if (opMenu == 1):
-                partidosRealizados = partido.calNumPartidos(len(jugadoresNovatos))
-                if (partidosRealizados == len(partido.partidosNovatos)):
-                    print(f"GANADOR/A NOVATO/A")
-                    jugador.mostrarGanador(jugadoresNovatos)
+                if (len(jugadoresNovatos) < 5):
+                    print(f"No se han registrado el mínimo de jugadores en esta categoría")
                 else:
-                    print(f"El torneo no ha terminado")
+                    partidosRealizados = partido.calNumPartidos(len(jugadoresNovatos))
+                    if (partidosRealizados == len(partido.partidosNovatos)):
+                        print(f"GANADOR/A NOVATO/A")
+                        jugador.mostrarGanador(jugadoresNovatos)
+                    else:
+                        print(f"El torneo no ha terminado")
             elif (opMenu == 2):
-                partidosRealizados = partido.calNumPartidos(len(jugadoresIntermedios))
-                if (partidosRealizados == len(partido.partidosIntermedios)):
-                    print(f"GANADOR/A INTERMDEDIO/A")
-                    jugador.mostrarGanador(jugadoresIntermedios)
+                if (len(jugadoresIntermedios) < 5):
+                    print(f"No se han registrado el mínimo de jugadores en esta categoría")
                 else:
-                    print(f"El torneo no ha terminado")
+                    partidosRealizados = partido.calNumPartidos(len(jugadoresIntermedios))
+                    if (partidosRealizados == len(partido.partidosIntermedios)):
+                        print(f"GANADOR/A INTERMDEDIO/A")
+                        jugador.mostrarGanador(jugadoresIntermedios)
+                    else:
+                        print(f"El torneo no ha terminado")
             elif (opMenu == 3):
-                partidosRealizados = partido.calNumPartidos(len(jugadoresAvanzados))
-                if (partidosRealizados == len(partido.partidosAvanzados)):
-                    print(f"GANADOR/A AVANZADO/A")
-                    jugador.mostrarGanador(jugadoresAvanzados)
+                if (len(jugadoresAvanzados) < 5):
+                    print(f"No se han registrado el mínimo de jugadores en esta categoría")
                 else:
-                    print(f"El torneo no ha terminado")
+                    partidosRealizados = partido.calNumPartidos(len(jugadoresAvanzados))
+                    if (partidosRealizados == len(partido.partidosAvanzados)):
+                        print(f"GANADOR/A AVANZADO/A")
+                        jugador.mostrarGanador(jugadoresAvanzados)
+                    else:
+                        print(f"El torneo no ha terminado")
             elif (opMenu == 4):
                 isActive = False
             os.system("pause")
