@@ -32,19 +32,19 @@ def menuRegistroJ():
             print(f"Ingrese una opción válida")
         else:
             if (opMenu == 1):
-                edad = int(input(f"Ingrese la edad del jugador : "))
+                edad = jugador.verificarEdad()
                 if (edad >= 15 and edad <= 16):
                     jugadoresNovatos.update(jugador.regJugador(opMenu, edad))
                 else:
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 2):
-                edad = int(input(f"Ingrese la edad del jugador : "))
+                edad = jugador.verificarEdad()
                 if (edad >= 17 and edad <= 20):
                     jugadoresIntermedios.update(jugador.regJugador(opMenu, edad))
                 else:
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 3):
-                edad = int(input(f"Ingrese la edad del jugador : "))
+                edad = jugador.verificarEdad()
                 if (edad > 20):
                     jugadoresAvanzados.update(jugador.regJugador(opMenu, edad))
                 else:
@@ -66,21 +66,23 @@ def menuRegistroP():
             print(f"Ingrese una opción válida")
         else:
             if (opMenu == 1):
-                isIncorrect = True
                 if (len(jugadoresNovatos) < 5):
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
-                    partido.regPartidos()
+                    partidoR = partido.regPartidos(opMenu)
+                    partido.partidosNovatos.update(partidoR)
             elif (opMenu == 2):
                 if (len(jugadoresIntermedios) < 5):
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
-                    partido.regPartidos()
+                    partidoR = partido.regPartidos(opMenu)
+                    partido.partidosIntermedios.update(partidoR)
             elif (opMenu == 3):
                 if (len(jugadoresAvanzados) < 5):
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
-                    partido.regPartidos()
+                    partidoR = partido.regPartidos(opMenu)
+                    partido.partidosAvanzados.update(partidoR)
             elif (opMenu == 4):
                 isActive = False
             os.system("pause")

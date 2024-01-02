@@ -1,6 +1,107 @@
 import os
+import menus as menu
+import jugadores as jugador
 
-partidos : {}
+partidosNovatos = {}
+partidosIntermedios = {}
+partidosAvanzados = {}
 
-def regPartidos():
-    return 0
+def regPartidos(categoria: int) -> dict:
+    id1 = None
+    id2 = None
+    contador = 0
+    if (categoria == 1):
+        contador = contador + len(partidosNovatos)
+        while (type(id1) != str):
+            idJ1 = input(f"Ingrese el código del jugador 1 : ")
+            id1 = jugador.buscarJugador(idJ1, menu.jugadoresNovatos)
+        while (type(id2) != str or id2 == id1):
+            idJ2 = input(f"Ingrese el código del jugador 2 : ")
+            id2 = jugador.buscarJugador(idJ2, menu.jugadoresNovatos)
+    elif (categoria == 2):
+        contador = contador + len(partidosIntermedios)
+        while (type(id1) != str):
+            idJ1 = input(f"Ingrese el código del jugador 1 : ")
+            id1 = jugador.buscarJugador(idJ1, menu.jugadoresIntermedios)
+        while (type(id2) != str or id2 == id1):
+            idJ2 = input(f"Ingrese el código del jugador 2 : ")
+            id2 = jugador.buscarJugador(idJ2, menu.jugadoresIntermedios)
+    elif (categoria == 3):
+        contador = contador + len(partidosAvanzados)
+        while (type(id1) != str):
+            idJ1 = input(f"Ingrese el código del jugador 1 : ")
+            id1 = jugador.buscarJugador(idJ1, menu.jugadoresAvanzados)
+        while (type(id2) != str or id2 == id1):
+            idJ2 = input(f"Ingrese el código del jugador 2 : ")
+            id2 = jugador.buscarJugador(idJ2, menu.jugadoresAvanzados)
+
+    print(f"INGRESE LOS RESULTADOS DE CADA SET")
+    print(F"SET 1")
+    set1J1 = int(input(f"Puntos jugador 1 : "))
+    set1J2 = int(input(f"Puntos jugador 2 : "))
+    print(F"SET 2")
+    set2J1 = int(input(f"Puntos jugador 1 : "))
+    set2J2 = int(input(f"Puntos jugador 2 : "))
+    print(F"SET 3")
+    set3J1 = int(input(f"Puntos jugador 1 : "))
+    set3J2 = int(input(f"Puntos jugador 2 : "))
+
+    puntosJ1S1 = set1J1 - set1J2
+    puntosJ2S1 = set1J2 - set1J1
+    puntosJ1S2 = set2J1 - set2J2
+    puntosJ2S2 = set2J2 - set2J1
+    puntosJ1S3 = set3J1 - set3J2
+    puntosJ2S3 = set3J2 - set3J1
+
+    if ((puntosJ1S1 > 0 and puntosJ1S2 > 0 and puntosJ1S3 > 0) or (puntosJ1S1 > 0 and puntosJ1S2 > 0) or (puntosJ1S1 > 0 and puntosJ1S3 > 0) or (puntosJ1S2 > 0 and puntosJ1S3 > 0)):
+        ganador = id1
+        PA1 = puntosJ1S1 + puntosJ1S2 + puntosJ1S3
+        PA2 = puntosJ2S1 + puntosJ2S2 + puntosJ2S3
+        PG1 = 1
+        PP1 = 0
+        TP1 = 2
+        PG2 = 0
+        PP2 = 1
+        TP2 = 0
+        if (categoria == 1):
+            jugador.actualizarJugador(ganador, menu.jugadoresNovatos, PA1, PG1, PP1, TP1)
+            jugador.actualizarJugador(id2, menu.jugadoresNovatos, PA2, PG2, PP2, TP2)
+        elif (categoria == 2):
+            jugador.actualizarJugador(ganador, menu.jugadoresIntermedios, PA1, PG1, PP1, TP1)
+            jugador.actualizarJugador(id2, menu.jugadoresIntermedios, PA2, PG2, PP2, TP2)
+        elif (categoria == 3):
+            jugador.actualizarJugador(ganador, menu.jugadoresAvanzados, PA1, PG1, PP1, TP1)
+            jugador.actualizarJugador(id2, menu.jugadoresAvanzados, PA2, PG2, PP2, TP2)
+    else:
+        ganador = id2
+        PA1 = puntosJ1S1 + puntosJ1S2 + puntosJ1S3
+        PA2 = puntosJ2S1 + puntosJ2S2 + puntosJ2S3
+        PG2 = 1
+        PP2 = 0
+        TP2 = 2
+        PG1 = 0
+        PP1 = 1
+        TP1 = 0
+        if (categoria == 1):
+            jugador.actualizarJugador(ganador, menu.jugadoresNovatos, PA2, PG2, PP2, TP2)
+            jugador.actualizarJugador(id1, menu.jugadoresNovatos, PA1, PG1, PP1, TP1)
+        elif (categoria == 2):
+            jugador.actualizarJugador(ganador, menu.jugadoresIntermedios, PA2, PG2, PP2, TP2)
+            jugador.actualizarJugador(id1, menu.jugadoresIntermedios, PA1, PG1, PP1, TP1)
+        elif (categoria == 3):
+            jugador.actualizarJugador(ganador, menu.jugadoresAvanzados, PA2, PG2, PP2, TP2)
+            jugador.actualizarJugador(id1, menu.jugadoresAvanzados, PA1, PG1, PP1, TP1)
+
+    partido = {
+        "id": str(contador),
+        "cont1": id1,
+        "cont2": id2,
+        "sets": {
+            "1": [set1J1, set1J2],
+            "2": [set2J1, set2J2],
+            "3": [set3J1, set3J2]
+        },
+        "ganador": ganador
+    }
+
+    return {contador : partido}
