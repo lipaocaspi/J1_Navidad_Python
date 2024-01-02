@@ -57,6 +57,7 @@ def menuRegistroP():
     os.system("pause")
     os.system("cls")
     isActive = True
+
     while (isActive):
         os.system("cls")
         try:
@@ -70,19 +71,28 @@ def menuRegistroP():
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
                     partidoR = partido.regPartidos(opMenu)
-                    partido.partidosNovatos.update(partidoR)
+                    if (type(partidoR) != dict):
+                        print(f"No se puede registrar un mismo partido 2 veces")
+                    else:
+                        partido.partidosNovatos.update(partidoR)
             elif (opMenu == 2):
                 if (len(jugadoresIntermedios) < 5):
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
                     partidoR = partido.regPartidos(opMenu)
-                    partido.partidosIntermedios.update(partidoR)
+                    if (type(partidoR) != dict):
+                        print(f"No se puede registrar un mismo partido 2 veces")
+                    else:
+                        partido.partidosIntermedios.update(partidoR)
             elif (opMenu == 3):
                 if (len(jugadoresAvanzados) < 5):
                     print(f"Deben haber mínimo 5 jugadores inscritos para iniciar los juegos")
                 else:
                     partidoR = partido.regPartidos(opMenu)
-                    partido.partidosAvanzados.update(partidoR)
+                    if (type(partidoR) != dict):
+                        print(f"No se puede registrar un mismo partido 2 veces")
+                    else:
+                        partido.partidosAvanzados.update(partidoR)
             elif (opMenu == 4):
                 isActive = False
             os.system("pause")
@@ -122,14 +132,26 @@ def menuGanadores():
             print(f"Ingrese una opción válida")
         else:
             if (opMenu == 1):
-                partido.calNumPartidos(len(jugadoresNovatos))
-                print(f"GANADOR/A NOVATO/A")
+                partidosRealizados = partido.calNumPartidos(len(jugadoresNovatos))
+                if (partidosRealizados == len(partido.partidosNovatos)):
+                    print(f"GANADOR/A NOVATO/A")
+                    jugador.mostrarGanador(jugadoresNovatos)
+                else:
+                    print(f"El torneo no ha terminado")
             elif (opMenu == 2):
-                partido.calNumPartidos(len(jugadoresIntermedios))
-                print(f"GANADOR/A INTERMEDIO/A")
+                partidosRealizados = partido.calNumPartidos(len(jugadoresIntermedios))
+                if (partidosRealizados == len(partido.partidosIntermedios)):
+                    print(f"GANADOR/A INTERMDEDIO/A")
+                    jugador.mostrarGanador(jugadoresIntermedios)
+                else:
+                    print(f"El torneo no ha terminado")
             elif (opMenu == 3):
-                partido.calNumPartidos(len(jugadoresAvanzados))
-                print(f"GANADOR/A AVANZADO/A")
+                partidosRealizados = partido.calNumPartidos(len(jugadoresAvanzados))
+                if (partidosRealizados == len(partido.partidosAvanzados)):
+                    print(f"GANADOR/A AVANZADO/A")
+                    jugador.mostrarGanador(jugadoresAvanzados)
+                else:
+                    print(f"El torneo no ha terminado")
             elif (opMenu == 4):
                 isActive = False
             os.system("pause")

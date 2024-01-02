@@ -1,6 +1,5 @@
 import os
 import menus as menu
-import jugadores as jugador
 
 isActive = True
 opMenu = 0

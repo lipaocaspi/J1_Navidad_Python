@@ -1,6 +1,5 @@
 import os
 import categorias as categoria
-import menus as menu
 
 isIncorrect = True
 
@@ -68,11 +67,26 @@ def actualizarJugador(codJugador: str, jugadores : dict, puntosA : int, partidos
     data.update({"PP" : PP})
     data.update({"PA" : PA})
     data.update({"TP" : TP})
-    print(data)
 
 def mostrarTabla(jugadores : dict):
     print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("ID", "JUGADOR", "PJ", "PG", "PP", "PA", "TP"))
     for item in jugadores:
         print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(jugadores[item]["Id"], jugadores[item]["Nombre"], jugadores[item]["PJ"], jugadores[item]["PG"], jugadores[item]["PP"], jugadores[item]["PA"], jugadores[item]["TP"]))
     print(f"")
-    os.system("pause")
+
+def mostrarGanador(jugadores : dict):
+    maxNombre = 0
+    maxTP = 0
+    maxPA = 0
+    for item in jugadores:
+        if (jugadores[item]["TP"] > maxTP):
+            maxNombre = jugadores[item]["Nombre"]
+            maxTP = jugadores[item]["TP"]
+            maxPA = jugadores[item]["PA"]
+        elif (jugadores[item]["TP"] == maxTP):
+            if (jugadores[item]["PA"] > maxPA):
+                maxNombre = jugadores[item]["Nombre"]
+                maxTP = jugadores[item]["TP"]
+                maxPA = jugadores[item]["PA"]
+    print(f"")
+    print(f"EL/LA GANADOR/A ES : {maxNombre}")
