@@ -22,6 +22,7 @@ while (isActive):
             menu.menuGanadores()
         elif (opMenu == 5):
             isActive = False
-            print(f"")
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
             os.system("pause")
+        else:
+            print(f"La opción ingresada es inválida")

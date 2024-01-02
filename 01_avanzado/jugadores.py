@@ -53,7 +53,6 @@ def buscarJugador(codJugador : str, jugadores : dict) -> str:
         return codigo
     else:
         print(f"No se encontró el jugador con el código {codJugador}")
-        os.system("pause")
 
 def actualizarJugador(codJugador: str, jugadores : dict, puntosA : int, partidosG : int, partidosP : int, totalP : int):
     data = jugadores.get(codJugador, -1)

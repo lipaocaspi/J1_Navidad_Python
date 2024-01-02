@@ -44,6 +44,7 @@ def menuPrincipal() -> int:
             print(f"")
             return int(input(f"Ingrese una opción : "))
         except ValueError:
+            print(f"Ingrese un dato válido")
             hasError = True
 
 def menuRegistroJ():
@@ -81,8 +82,10 @@ def menuRegistroJ():
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 4):
                 isActive = False
+            else:
+                print(f"La opción ingresada es inválida")
             os.system("pause")
-
+            
 def menuRegistroP():
     os.system("pause")
     os.system("cls")
@@ -127,6 +130,8 @@ def menuRegistroP():
                         partido.partidosAvanzados.update(partidoR)
             elif (opMenu == 4):
                 isActive = False
+            else:
+                print(f"La opción ingresada es inválida")
             os.system("pause")
 
 def menuTablas():
@@ -152,6 +157,8 @@ def menuTablas():
                 jugador.mostrarTabla(jugadoresAvanzados)
             elif (opMenu == 4):
                 isActive = False
+            else:
+                print(f"La opción ingresada es inválida")
             os.system("pause")
 
 def menuGanadores():
@@ -201,4 +208,6 @@ def menuGanadores():
                         print(f"El torneo no ha terminado")
             elif (opMenu == 4):
                 isActive = False
+            else:
+                print(f"La opción ingresada es inválida")
             os.system("pause")
