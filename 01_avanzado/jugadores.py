@@ -1,5 +1,6 @@
 import os
 import categorias as categoria
+import menus as menu
 
 isIncorrect = True
 
@@ -15,11 +16,21 @@ def verificarEdad() -> int:
             isIncorrect = False
     return edad
 
-def regJugador(categoriaJugador : int, edadJugador : int) -> dict:
+def buscarId(codJugador : str, jugadores : dict) -> str:
+    data = jugadores.get(codJugador, -1)
+    if (type(data) == dict):
+        codigo = data.get("Id")
+        return codigo
+
+def regJugador(categoriaJugador : int, edadJugador : int, jugadores : dict) -> dict:
     id = ""
     nombre = ""
     while (id == ""):
         id = input(f"Ingrese el código del jugador : ")
+        idEncontrado = buscarId(id, jugadores)
+        if (type(idEncontrado) == str):
+            print(f"Ya existe un jugador con ese código")
+            id = ""
     while (nombre == ""):
         nombre = input(f"Ingrese el nombre del jugador : ")
     categoriaJ = categoria.defCategoria(categoriaJugador)
@@ -57,4 +68,11 @@ def actualizarJugador(codJugador: str, jugadores : dict, puntosA : int, partidos
     data.update({"PP" : PP})
     data.update({"PA" : PA})
     data.update({"TP" : TP})
-    # print(data)
+    print(data)
+
+def mostrarTabla(jugadores : dict):
+    print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format("ID", "JUGADOR", "PJ", "PG", "PP", "PA", "TP"))
+    for item in jugadores:
+        print("{:<10} {:<10} {:<10} {:<10} {:<10} {:<10} {:<10}".format(jugadores[item]["Id"], jugadores[item]["Nombre"], jugadores[item]["PJ"], jugadores[item]["PG"], jugadores[item]["PP"], jugadores[item]["PA"], jugadores[item]["TP"]))
+    print(f"")
+    os.system("pause")

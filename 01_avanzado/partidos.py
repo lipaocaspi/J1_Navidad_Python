@@ -1,10 +1,17 @@
 import os
+import math
 import menus as menu
 import jugadores as jugador
 
 partidosNovatos = {}
 partidosIntermedios = {}
 partidosAvanzados = {}
+
+def buscarPartido(codJugador : str, partidos : dict, parameter : str):
+    data = partidos.get(codJugador, -1)
+    if (type(data) == dict):
+        codigo = data.get(parameter)
+        return codigo
 
 def regPartidos(categoria: int) -> dict:
     id1 = None
@@ -105,3 +112,10 @@ def regPartidos(categoria: int) -> dict:
     }
 
     return {contador : partido}
+
+def calNumPartidos(numJugadores : int) -> float:
+    jugadoresPorPartido = 2
+    numerador = math.factorial(numJugadores)
+    denominador = (math.factorial(jugadoresPorPartido)) * (math.factorial(numJugadores - jugadoresPorPartido))
+    numPartidos = numerador / denominador
+    return numPartidos

@@ -34,19 +34,19 @@ def menuRegistroJ():
             if (opMenu == 1):
                 edad = jugador.verificarEdad()
                 if (edad >= 15 and edad <= 16):
-                    jugadoresNovatos.update(jugador.regJugador(opMenu, edad))
+                    jugadoresNovatos.update(jugador.regJugador(opMenu, edad, jugadoresNovatos))
                 else:
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 2):
                 edad = jugador.verificarEdad()
                 if (edad >= 17 and edad <= 20):
-                    jugadoresIntermedios.update(jugador.regJugador(opMenu, edad))
+                    jugadoresIntermedios.update(jugador.regJugador(opMenu, edad, jugadoresIntermedios))
                 else:
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 3):
                 edad = jugador.verificarEdad()
                 if (edad > 20):
-                    jugadoresAvanzados.update(jugador.regJugador(opMenu, edad))
+                    jugadoresAvanzados.update(jugador.regJugador(opMenu, edad, jugadoresAvanzados))
                 else:
                     print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 4):
@@ -83,6 +83,53 @@ def menuRegistroP():
                 else:
                     partidoR = partido.regPartidos(opMenu)
                     partido.partidosAvanzados.update(partidoR)
+            elif (opMenu == 4):
+                isActive = False
+            os.system("pause")
+
+def menuTablas():
+    os.system("pause")
+    os.system("cls")
+    isActive = True
+    while (isActive):
+        os.system("cls")
+        try:
+            print(menuRegJ)
+            opMenu = int(input(f"Ingrese una opción : "))
+        except ValueError:
+            print(f"Ingrese una opción válida")
+        else:
+            if (opMenu == 1):
+                jugador.mostrarTabla(jugadoresNovatos)
+            elif (opMenu == 2):
+                jugador.mostrarTabla(jugadoresIntermedios)
+            elif (opMenu == 3):
+                jugador.mostrarTabla(jugadoresAvanzados)
+            elif (opMenu == 4):
+                isActive = False
+            os.system("pause")
+
+def menuGanadores():
+    os.system("pause")
+    os.system("cls")
+    isActive = True
+    while (isActive):
+        os.system("cls")
+        try:
+            print(menuRegJ)
+            opMenu = int(input(f"Ingrese una opción : "))
+        except ValueError:
+            print(f"Ingrese una opción válida")
+        else:
+            if (opMenu == 1):
+                partido.calNumPartidos(len(jugadoresNovatos))
+                print(f"GANADOR/A NOVATO/A")
+            elif (opMenu == 2):
+                partido.calNumPartidos(len(jugadoresIntermedios))
+                print(f"GANADOR/A INTERMEDIO/A")
+            elif (opMenu == 3):
+                partido.calNumPartidos(len(jugadoresAvanzados))
+                print(f"GANADOR/A AVANZADO/A")
             elif (opMenu == 4):
                 isActive = False
             os.system("pause")

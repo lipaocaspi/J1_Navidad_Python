@@ -1,5 +1,6 @@
 import os
 import menus as menu
+import jugadores as jugador
 
 isActive = True
 opMenu = 0
@@ -16,9 +17,9 @@ while (isActive):
         elif (opMenu == 2):
             menu.menuRegistroP()
         elif (opMenu == 3):
-            pass
+            menu.menuTablas()
         elif (opMenu == 4):
-            pass
+            menu.menuGanadores()
         elif (opMenu == 5):
             isActive = False
             print(f"GRACIAS POR USAR NUESTRO SERVICIO")
