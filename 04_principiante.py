@@ -24,7 +24,7 @@ print(f"INGRESE NÚMEROS ENTEROS POSITIVOS (CUANDO DESEE PARAR INGRESE UN NÚMER
 while (isPositive):
     try:
         num = int(input(f"Ingrese el número : "))
-    except:
+    except ValueError:
         print(f"Ingrese un dato válido")
     else:
         if (num >= 0):
