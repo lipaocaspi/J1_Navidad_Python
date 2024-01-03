@@ -30,9 +30,9 @@ def mostrarInventario():
 def buscarProducto(codigoProducto : str) -> int:
     global indice
     indice = -1
-    for item in productos:
-        if codigoProducto in item:
-            indice = productos.index(item)
+    for i in range(len(productos)):
+        if (codigoProducto == productos[i][0]):
+            indice = i
     return indice
 
 def actStock():

@@ -40,6 +40,7 @@ while (isActive):
                 producto.productos.append(producto.registroProducto)
                 producto.registroProducto = []
                 rta = input(f"¿Desea registrar otro producto? S(Sí) o Enter(No) : ")
+                # print(producto.productos)
         elif (opMenu == 2):
             os.system("cls")
             producto.mostrarInventario()
