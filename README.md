@@ -74,3 +74,38 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | contadorSobrepeso | S |    int |
 
 En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/03_principiante.py) se encuentra el código.
+
+#### 4. Análisis:
+**Problema:** recibir n números enteros positivos, y al recibir un número entero negativo, mostrar un reporte de la cantidad de números registrados y el promedio de los pares e impares.
+
+**Cómo:** 
+* Crear una lista para almacenar cada uno de los números, dependiendo de:
+	* Total de números ingresados.
+	* Total de números pares ingresados.
+	* Total de números impares ingresados.
+	* Total de números menores a 10.
+	* Total de números entre 20 y 50.
+	* Total de números mayores que 100.
+* Pedir al usuario que ingrese un número entero positivo, y por medio de un **while** y un **try-except**, verificar que el tipo de dato sea correcto.
+* Si el tipo de dato es correcto, se verifica por medio de **if** si es par o impar, así como si es menor de 10, está entre 20 y 50, o es mayor a 100. Se agrega a la lista correspondiente.
+* Para calcular el promedio de los números pares e impares:
+	* promedioPares = $\frac{sum(paresIngresados)}{len(paresIngresados)}$
+	
+	* promedioImpares = $\frac{sum(imparesIngresados)}{len(imparesIngresados)}$
+* Se imprime el reporte.
+
+**Variables:**
+
+| Variable   |      E/S      |  Tipo de Dato |
+|----------|:-------------:|------:|
+| num | E |    int |
+| ingresados | S |    list |
+| paresIngresados|  S | list |
+| imparesIngresados |    S  |   list |
+| promedioPares | S |    float |
+| promedioImpares |    S  |   float |
+| menoresDiez | S |    list |
+| veinteCincuenta | S |    list |
+| mayoresCien | S |    list |
+
+En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/04_principiante.py) se encuentra el código.
