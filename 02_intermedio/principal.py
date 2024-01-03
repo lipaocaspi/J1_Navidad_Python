@@ -23,7 +23,15 @@ while (isActive):
                 os.system("cls")
                 print(headerD)
                 valor = 0
-                codigo = dependencia.regDependencia(valor, "código (3 cifras)", int)
+                indice = 0
+                isPresent = True
+                while (isPresent):
+                    codigo = dependencia.regDependencia(valor, "código", str)
+                    indice = dependencia.buscarDependencia(codigo)
+                    if (indice != -1):
+                        print(f"El código ya se encuentra registrado")
+                    else:
+                        isPresent = False
                 nombre = dependencia.regDependencia(valor, "nombre", str)
                 co2Producido = 0
                 dependencia.registroDependencia = [codigo, nombre, [], [], co2Producido]

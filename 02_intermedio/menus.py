@@ -56,7 +56,7 @@ def menuDependencia():
                 print(headerCD)
                 while (isIncorrect):
                     try:
-                        codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
+                        codigo = str(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
                         print(f"Error en el dato de ingreso")
                     else:
@@ -80,7 +80,7 @@ def menuDependencia():
                 print(headerCT)
                 while (isIncorrect):
                     try:
-                        codigo = int(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
+                        codigo = str(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
                     except ValueError:
                         print(f"Error en el dato de ingreso")
                     else:

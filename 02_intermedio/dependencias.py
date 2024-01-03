@@ -2,6 +2,14 @@ dependencias = []
 registroDependencia = []
 isIncorrect = True
 
+def buscarDependencia(codigoDepedencia : str) -> int:
+    global indice
+    indice = -1
+    for item in dependencias:
+        if codigoDepedencia in item:
+            indice = dependencias.index(item)
+    return indice
+
 def regDependencia(valorDato, nombreDato, tipoDato):
     global isIncorrect
     isIncorrect = True
@@ -12,19 +20,8 @@ def regDependencia(valorDato, nombreDato, tipoDato):
         except ValueError:
             print(f"Ingrese un dato correcto")
         else:
-            if (nombreDato == "código (3 cifras)" and len(str(valorDato)) != 3):
-                regDependencia(valorDato, nombreDato, tipoDato)
-            else: 
-                isIncorrect = False
+            isIncorrect = False
     return valorDato
-
-def buscarDependencia(codigoDepedencia : int) -> int:
-    global indice
-    indice = -1
-    for item in dependencias:
-        if codigoDepedencia in item:
-            indice = dependencias.index(item)
-    return indice
 
 def regConsumoDispositivos(indiceDependencia : int):
     global isIncorrect
