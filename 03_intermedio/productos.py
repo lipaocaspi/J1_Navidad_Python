@@ -13,9 +13,9 @@ def regProducto(valorDato, nombreDato, tipoDato):
         except ValueError:
             print(f"Ingrese un dato correcto")
         else:
-            if (nombreDato == "código (3 cifras)" and len(str(valorDato)) != 3):
-                regProducto(valorDato, nombreDato, tipoDato)
-            else :
+            if (nombreDato == "código" and (buscarProducto(valorDato) != -1)):
+                print(f"El código ya se encuentra registrado")
+            else:
                 registroProducto.append(valorDato)
                 isIncorrect = False
     return valorDato
@@ -27,14 +27,12 @@ def mostrarInventario():
     for i in range(len(productos)):
         print("{:<10} {:<10} {:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format(productos[i][0], productos[i][1], productos[i][2], productos[i][3], productos[i][4], productos[i][5], productos[i][6], productos[i][7]))
 
-def buscarProducto(codigoProducto : int) -> int:
+def buscarProducto(codigoProducto : str) -> int:
     global indice
     indice = -1
     for item in productos:
         if codigoProducto in item:
             indice = productos.index(item)
-    if (indice == -1):
-        print(f"No se encontró el producto")
     return indice
 
 def actStock():

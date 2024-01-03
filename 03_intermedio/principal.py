@@ -29,7 +29,7 @@ while (isActive):
                 os.system("cls")
                 print(headerR)
                 valor = 0
-                codigo = producto.regProducto(valor, "código (3 cifras)", int)
+                codigo = producto.regProducto(valor, "código", str)
                 nombre = producto.regProducto(valor, "nombre", str)
                 valorCompra = producto.regProducto(valor, "valor de compra", float)
                 valorVenta = producto.regProducto(valor, "valor de venta", float)
@@ -56,15 +56,14 @@ while (isActive):
                 print(headerA)
                 while (isIncorrect):
                     try:
-                        codigo = int(input(f"Ingrese código del producto que desee actualizar stock : "))
+                        codigo = str(input(f"Ingrese código del producto que desee actualizar stock : "))
                     except ValueError:
                         print(f"Ingrese un dato válido")
                     else:
-                        if (len(str(codigo)) != 3):
-                            print(f"Ingrese un código de 3 cifras")
-                        else:
-                            producto.buscarProducto(codigo)
-                            isIncorrect = False
+                        producto.buscarProducto(codigo)
+                        if (producto.indice == -1):
+                            print(f"No se encontró el producto")
+                        isIncorrect = False
                 producto.actStock()
                 rta = input(f"¿Desea registrar otra actualización de stock? S(Sí) o Enter(No) : ")
         elif (opMenu == 4):
