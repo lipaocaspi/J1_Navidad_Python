@@ -20,7 +20,10 @@ def regDependencia(valorDato, nombreDato, tipoDato):
         except ValueError:
             print(f"Ingrese un dato correcto")
         else:
-            isIncorrect = False
+            if (valorDato == ""):
+                print(f"El {nombreDato} no puede estar vacío")
+            else:
+                isIncorrect = False
     return valorDato
 
 def regConsumoDispositivos(indiceDependencia : int):
