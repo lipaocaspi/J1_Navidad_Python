@@ -1,7 +1,7 @@
 ### Ejercicios Principiante
 #### 1. Análisis:
-**Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
-**Cómo:** 
+* **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
+* **Cómo:** 
 * Crear una lista que almacene los valores de los números a ingresar.
 * Por medio de un **while**, repetir la solicitud de ingreso de los valores hasta que los valores correspondan al tipo de dato y se ingresen 3 de ellos.
 * Dentro del mismo **while**, verificar, haciendo uso de un **if**, que los valores ingresados sean números enteros positivos y agregarlos a la lista creada.
@@ -18,8 +18,8 @@
 En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/01_principiante.py) se encuentra el código.
 
 #### 2. Análisis:
-**Problema:** calcular el IMC de los estudiantes nuevos de Campuslands, teniendo en cuenta su altura y peso. Mostrar el nombre, la edad, el IMC y la categoría según el IMC obtenido.
-**Cómo:** 
+* **Problema:** calcular el IMC de los estudiantes nuevos de Campuslands, teniendo en cuenta su altura y peso. Mostrar el nombre, la edad, el IMC y la categoría según el IMC obtenido.
+* **Cómo:** 
 * Crear una función que realice el correspondiente manejo de excepciones.
 * Pedir al usuario que ingrese los datos relacionados con el estudiante (nombre, edad, peso y altura).
 * Calcular el IMC: $\frac{peso (Kg)}{(altura (m))^2}$
