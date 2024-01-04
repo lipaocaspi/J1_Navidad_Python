@@ -1,7 +1,5 @@
-
 #### Ejercicios Principiante
 #### 1. Análisis:
-En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/01_principiante.py) se encuentra el código.
 **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
 **Cómo:** 
 * Crear una lista que almacene los valores de los números a ingresar.
@@ -17,8 +15,9 @@ En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | nums|  S | list |
 | suma | S |    int |
 
+En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/01_principiante.py) se encuentra el código.
+
 #### 2. Análisis:
-En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/02_principiante.py) se encuentra el código.
 **Problema:** calcular el IMC de los estudiantes nuevos de Campuslands, teniendo en cuenta su altura y peso. Mostrar el nombre, la edad, el IMC y la categoría según el IMC obtenido.
 **Cómo:** 
 * Crear una función que realice el correspondiente manejo de excepciones.
@@ -40,8 +39,9 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | categoria | S |    float |
 | estudiante | S |    list |
 
+En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/02_principiante.py) se encuentra el código.
+
 #### 3. Análisis:
-En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/03_principiante.py) se encuentra el código.
 **Problema:** teniendo en cuenta el ejercicio anterior, realizar el ingreso de los datos de 20 estudiantes, haciendo un conteo de la cantidad de estudiantes pertenecientes a cada categoría.
 **Cómo:** 
 * Crear una función que realice el correspondiente manejo de excepciones.
@@ -73,9 +73,11 @@ En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | contadorObesidadIII | S |    int |
 | contadorSobrepeso | S |    int |
 
+En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/03_principiante.py) se encuentra el código.
+
 #### 4. Análisis:
-En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/04_principiante.py) se encuentra el código.
 **Problema:** recibir n números enteros positivos, y al recibir un número entero negativo, mostrar un reporte de la cantidad de números registrados y el promedio de los pares e impares.
+
 **Cómo:** 
 * Crear una lista para almacenar cada uno de los números, dependiendo de:
 	* Total de números ingresados.
@@ -106,9 +108,10 @@ En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | veinteCincuenta | S |    list |
 | mayoresCien | S |    list |
 
+En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/04_principiante.py) se encuentra el código.
+
 #### Ejercicios Intermedio
 #### 1. Análisis:
-En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/01_intermedio) se encuentra el código con sus respectivos módulos.
 **Problema:** llevar un registro de los sismos ocurridos en 5 ciudades del país, calcular su promedio y asignar la clasificación dependiendo de su valor.
 **Cómo:** 
 * Dividir el programa en 4 módulos:
@@ -142,3 +145,5 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | sismos| S |    list|
 | promedio| S |    float |
 | riesgo| S |    str |
+
+En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/01_intermedio) se encuentra el código con sus respectivos módulos.
