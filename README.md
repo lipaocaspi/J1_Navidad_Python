@@ -120,14 +120,14 @@ En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* sismos
 	* principal
 * **Módulo ciudades:**
-	Se definen:
+	se definen:
 	* **regCiudad() :** solicita el nombre de la ciudad y si el dato digitado es correcto, se agrega a una lista, junto a una lista vacía, un promedio igual a 0 y un riesgo igual a "". Esta lista se agrega a una lista que contiene las listas de las ciudades.
 	* **buscarCiudad(nombreCiudad) :** toma el nombre de la ciudad digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las ciudades. Si encuentra el nombre de la ciudad, extrae el índice de la lista e imprime la información correspondiente a esa ciudad. Si no lo encuentra, devuelve un índice = -1.
 * **Módulo menu:**
-	Se define:
+	se define:
 	* **menuShow() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
 * **Módulo sismos:**
-	Se definen:
+	se definen:
 	* 	**regSismo(ciudadSismo) :** toma el índice de la ciudad. Recibe el dato de la intensidad del sismo, y si el dato es correcto, agrega el valor a la lista que se encuentra dentro de la lista correspondiente al índice de la ciudad.
 	* **reporte() :** verificando que se hayan registrado las 5 ciudades, que haya al menos un sismo registrado en cada ciudad y que el número de sismos en cada ciudad sea el mismo, se calcula el promedio de los sismos de cada ciudad y se asigna su clasificación. Se imprime la tabla mostrando: la ciudad, el promedio de sismos y la clasificación.
 * **Módulo principal:**
