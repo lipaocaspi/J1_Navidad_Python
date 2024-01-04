@@ -109,3 +109,39 @@ En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | mayoresCien | S |    list |
 
 En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/04_principiante.py) se encuentra el código.
+
+#### Ejercicios Intermedio
+#### 1. Análisis:
+**Problema:** llevar un registro de los sismos ocurridos en 5 ciudades del país, calcular su promedio y asignar la clasificación dependiendo de su valor.
+**Cómo:** 
+* Dividir el programa en 4 módulos:
+	* ciudades
+	* menu
+	* sismos
+	* principal
+* **Módulo ciudades:**
+	Se definen:
+	* **regCiudad() :** solicita el nombre de la ciudad y si el dato digitado es correcto, se agrega a una lista, junto a una lista vacía, un promedio igual a 0 y un riesgo igual a "". Esta lista se agrega a una lista que contiene las listas de las ciudades.
+	* **buscarCiudad(nombreCiudad) :** toma el nombre de la ciudad digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las ciudades. Si encuentra el nombre de la ciudad, extrae el índice de la lista e imprime la información correspondiente a esa ciudad. Si no lo encuentra, devuelve un índice = -1.
+* **Módulo menu:**
+	Se define:
+	* **menuShow() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
+* **Módulo sismos:**
+	Se definen:
+	* 	**regSismo(ciudadSismo) :** toma el índice de la ciudad. Recibe el dato de la intensidad del sismo, y si el dato es correcto, agrega el valor a la lista que se encuentra dentro de la lista correspondiente al índice de la ciudad.
+	* **reporte() :** verificando que se hayan registrado las 5 ciudades, que haya al menos un sismo registrado en cada ciudad y que el número de sismos en cada ciudad sea el mismo, se calcula el promedio de los sismos de cada ciudad y se asigna su clasificación. Se imprime la tabla mostrando: la ciudad, el promedio de sismos y la clasificación.
+* **Módulo principal:**
+	* Haciendo uso de un **while** y un **try-except**, se muestra el menú de opciones.
+	* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
+
+**Variables:**
+| Variable   |      E/S      |  Tipo de Dato |
+|----------|:-------------:|------:|
+| opMenu| E |    int |
+| ciudad| E |    str|
+| nombre| E |    str|
+| sismo| E |    float|
+| registroCiudad|  S | list |
+| sismos| S |    list|
+| promedio| S |    float |
+| riesgo| S |    str |
