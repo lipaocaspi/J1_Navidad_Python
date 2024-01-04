@@ -1,3 +1,4 @@
+
 #### Ejercicios Principiante
 #### 1. Análisis:
 **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
@@ -128,7 +129,7 @@ En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* **menuShow() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
 * **Módulo sismos:**
 	se definen:
-	* 	**regSismo(ciudadSismo) :** toma el índice de la ciudad. Recibe el dato de la intensidad del sismo, y si el dato es correcto, agrega el valor a la lista que se encuentra dentro de la lista correspondiente al índice de la ciudad.
+	* 	**regSismo(ciudadSismo) :** recibe el índice de la ciudad. Recibe el dato digitado de la intensidad del sismo, y si el dato es correcto, agrega el valor a la lista que se encuentra dentro de la lista correspondiente al índice de la ciudad.
 	* **reporte() :** verificando que se hayan registrado las 5 ciudades, que haya al menos un sismo registrado en cada ciudad y que el número de sismos en cada ciudad sea el mismo, se calcula el promedio de los sismos de cada ciudad y se asigna su clasificación. Se imprime la tabla mostrando: la ciudad, el promedio de sismos y la clasificación.
 * **Módulo principal:**
 	* Haciendo uso de un **while** y un **try-except**, se muestra el menú de opciones.
@@ -147,3 +148,48 @@ En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | riesgo| S |    str |
 
 En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/01_intermedio) se encuentra el código con sus respectivos módulos.
+
+#### 2. Análisis:
+**Problema:** calcular el CO2 producido en diferentes instalaciones gubernamentales de la ciudad.
+**Cómo:** 
+* Dividir el programa en 3 módulos:
+	* dependencias
+	* menus
+	* principal
+* **Módulo dependencias:**
+	se definen:
+	* **buscarDependencia(codigoDependencia) :** toma el código de la dependencia digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las dependencias.
+	* **regDependencia(valorDato, nombreDato, tipoDato) :** toma el valor del dato, el nombre del dato y el tipo de dato correspondiente a la dependencia y si el dato digitado es correcto, sale de la función.
+	* **regConsumoDispositivos(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la potencia del dispositivo y el tiempo de uso del dispositivo, y si los datos son correctos, calcula el valor del consumo del dispositivo: $\frac{potencia * tiempoUso}{1000}$. Agrega el valor a la primera lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
+	* **regConsumoTransporte(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la cantidad de kilómetros recorridos por el transporte, y si el dato es correcto, agrega el valor a la segunda lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
+	* **calcularEmisiones() :** hace la sumatoria de los valores ingresados en cada lista de cada una de las dependencias y las multiplica por el factor de emisión correspondiente. Se suman los dos resultados y se imprimen la información correspondiente.
+* **Módulo menus:**
+	se definen:
+	* **menuPrincipal() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
+	* **menuDependencia() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido. Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
+* **Módulo principal:**
+	* Haciendo uso de un **while** y un **try-except**, se muestra el menú de opciones.
+	* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
+
+**Variables:**
+| Variable   |      E/S      |  Tipo de Dato |
+|----------|:-------------:|------:|
+| opMenu| E |    int |
+| codigo| E | str|
+| nombre| E | str|
+| valorDato | E |    str|
+| potencia| E | float |
+| tiempoUso| E | int|
+| kmRecorridos| E | float |
+| emiDispositivos | S | float |
+| emiTransporte | S | float|
+| emiTotal | S | float |
+| co2Producido| S | float |
+| dependencias| S |    list|
+| registroDependencia| S |    list|
+| valorDato | S |    float |
+| riesgo| S |    str |
+| max| S | float|
+| nomMax| S | str|
+
+En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/02_intermedio) se encuentra el código con sus respectivos módulos.
