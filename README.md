@@ -1,4 +1,4 @@
-#### Ejercicios Principiante
+### Ejercicios Principiante
 #### 1. Análisis:
 **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
 **Cómo:** 
@@ -110,7 +110,7 @@ En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 
 En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/04_principiante.py) se encuentra el código.
 
-#### Ejercicios Intermedio
+### Ejercicios Intermedio
 #### 1. Análisis:
 **Problema:** llevar un registro de los sismos ocurridos en 5 ciudades del país, calcular su promedio y asignar la clasificación dependiendo de su valor.
 **Cómo:** 
@@ -233,3 +233,5 @@ En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | suma| S |    int|
 
 En el directorio [03_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/03_intermedio) se encuentra el código con sus respectivos módulos.
+
+### Ejercicio Avanzado
