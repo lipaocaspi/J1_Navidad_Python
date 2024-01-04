@@ -30,6 +30,7 @@ En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* Imprimir los datos solicitados (nombre, edad, IMC y categoría).
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | nombre | E |    str |
@@ -58,6 +59,7 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* Imprimir los datos solicitados (nombre, edad, IMC y categoría).
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | nombre | E |    str |
@@ -95,6 +97,7 @@ En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* Se imprime el reporte.
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | num | E |    int |
@@ -134,6 +137,7 @@ En el archivo [04_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 		* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | opMenu| E |    int |
@@ -170,6 +174,7 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 		* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | opMenu| E |    int |
@@ -215,6 +220,7 @@ En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 		* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | opMenu| E |    int |
