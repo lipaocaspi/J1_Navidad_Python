@@ -1,5 +1,6 @@
 #### Ejercicios Principiante
-#### 1. Análisis:
+#### 1. [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/01_principiante.py) 
+##### Análisis:
 **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
 **Cómo:** 
 * Crear una lista que almacene los valores de los números a ingresar.
@@ -15,7 +16,7 @@
 | nums|  S | list |
 | suma | S |    int |
 
-En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/01_principiante.py) se encuentra el código.
+En el archivo  se encuentra el código.
 
 #### 2. Análisis:
 **Problema:** calcular el IMC de los estudiantes nuevos de Campuslands, teniendo en cuenta su altura y peso. Mostrar el nombre, la edad, el IMC y la categoría según el IMC obtenido.
