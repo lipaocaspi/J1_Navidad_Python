@@ -1,4 +1,3 @@
-
 #### Ejercicios Principiante
 #### 1. Análisis:
 **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
@@ -158,7 +157,7 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 	* principal
 * **Módulo dependencias:**
 	se definen:
-	* **buscarDependencia(codigoDependencia) :** toma el código de la dependencia digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las dependencias.
+	* **buscarDependencia(codigoDependencia) :** toma el código de la dependencia digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las dependencias. Si encuentra el código de la dependencia, extrae el índice de la lista. Si no lo encuentra, devuelve un índice = -1.
 	* **regDependencia(valorDato, nombreDato, tipoDato) :** toma el valor del dato, el nombre del dato y el tipo de dato correspondiente a la dependencia y si el dato digitado es correcto, sale de la función.
 	* **regConsumoDispositivos(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la potencia del dispositivo y el tiempo de uso del dispositivo, y si los datos son correctos, calcula el valor del consumo del dispositivo: $\frac{potencia * tiempoUso}{1000}$. Agrega el valor a la primera lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
 	* **regConsumoTransporte(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la cantidad de kilómetros recorridos por el transporte, y si el dato es correcto, agrega el valor a la segunda lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
@@ -193,3 +192,44 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | nomMax| S | str|
 
 En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/02_intermedio) se encuentra el código con sus respectivos módulos.
+
+#### 3. Análisis:
+**Problema:** realizar el control detallado de productos en un negocio.
+**Cómo:** 
+* Dividir el programa en 3 módulos:
+	* productos
+	* menu
+	* principal
+* **Módulo productos:**
+	se definen:
+	* **regProducto(valorDato, nombreDato, tipoDato) :** toma el valor del dato, el nombre del dato y el tipo de dato correspondiente al producto y si el dato digitado es correcto, sale de la función.
+	* **mostrarInventario() :** imprime una tabla con los datos registrados de cada producto en el inventario.
+	* **buscarProducto(codigoProducto) :** toma el código del producto digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de los productos. Si encuentra el código del producto, define el índice de la lista. Si no lo encuentra, devuelve un índice = -1.
+	* **actStock() :** recibe el valor del stock que se desea añadir o restar a un producto en específico y, si el valor digitado es correcto y el cálculo del nuevo stock no es menor a 0, se actualiza el valor del stock.
+	* **imprimeInforme() :** imprime una tabla con los datos registrados de cada producto cuyo stock actual se encuentra por debajo del stock mínimo.
+	* **calGanancia() :** realiza la diferencia entre el valor de venta y valor de compra, multiplicado por el stock actual de cada producto, e imprime el valor resultante.
+* **Módulo menu:**
+	se define:
+	* **menuShow() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
+* **Módulo principal:**
+	* Haciendo uso de un **while** y un **try-except**, se muestra el menú de opciones.
+	* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
+
+**Variables:**
+| Variable   |      E/S      |  Tipo de Dato |
+|----------|:-------------:|------:|
+| opMenu| E |    int |
+| codigo| E | str|
+| nombre| E | str|
+| valorCompra| E | float|
+| valorVenta| E | float|
+| stockMin| E | int|
+| stockMax| E | int|
+| stockActual| E | int|
+| nombreProveedor| E | str|
+| valorDato | E |    str|
+| productos| S |    list|
+| registroProducto| S |    list|
+| suma| S |    int|
+
+En el directorio [03_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/03_intermedio) se encuentra el código con sus respectivos módulos.
