@@ -2,11 +2,11 @@
 #### 1. Análisis:
 * **Problema:** realizar un programa que reciba 3 números enteros positivos e imprima la sumatoria de ellos.
 * **Cómo:** 
-* Crear una lista que almacene los valores de los números a ingresar.
-* Por medio de un **while**, repetir la solicitud de ingreso de los valores hasta que los valores correspondan al tipo de dato y se ingresen 3 de ellos.
-* Dentro del mismo **while**, verificar, haciendo uso de un **if**, que los valores ingresados sean números enteros positivos y agregarlos a la lista creada.
-* Realizar la suma de los valores ingresados en la lista y asignarla en una variable.
-* Imprimir el valor de la variable correspondiente a la suma.
+	* Crear una lista que almacene los valores de los números a ingresar.
+	* Por medio de un **while**, repetir la solicitud de ingreso de los valores hasta que los valores correspondan al tipo de dato y se ingresen 3 de ellos.
+	* Dentro del mismo **while**, verificar, haciendo uso de un **if**, que los valores ingresados sean números enteros positivos y agregarlos a la lista creada.
+	* Realizar la suma de los valores ingresados en la lista y asignarla en una variable.
+	* Imprimir el valor de la variable correspondiente a la suma.
 
 **Variables:**
 | Variable   |      E/S      |  Tipo de Dato |
