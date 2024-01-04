@@ -63,23 +63,32 @@ def menuRegistroJ():
             print(f"Ingrese una opción válida")
         else:
             if (opMenu == 1):
-                edad = jugador.verificarEdad()
-                if (edad >= 15 and edad <= 16):
-                    jugadoresNovatos.update(jugador.regJugador(opMenu, edad, jugadoresNovatos))
+                if (len(partido.partidosNovatos) > 0):
+                    print(f"El torneo ya comenzó, no se pueden registrar más participantes")
                 else:
-                    print(f"La edad no corresponde a la categoría seleccionada")
+                    edad = jugador.verificarEdad()
+                    if (edad >= 15 and edad <= 16):
+                        jugadoresNovatos.update(jugador.regJugador(opMenu, edad, jugadoresNovatos))
+                    else:
+                        print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 2):
-                edad = jugador.verificarEdad()
-                if (edad >= 17 and edad <= 20):
-                    jugadoresIntermedios.update(jugador.regJugador(opMenu, edad, jugadoresIntermedios))
+                if (len(partido.partidosIntermedios) > 0):
+                    print(f"El torneo ya comenzó, no se pueden registrar más participantes")
                 else:
-                    print(f"La edad no corresponde a la categoría seleccionada")
+                    edad = jugador.verificarEdad()
+                    if (edad >= 17 and edad <= 20):
+                        jugadoresIntermedios.update(jugador.regJugador(opMenu, edad, jugadoresIntermedios))
+                    else:
+                        print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 3):
-                edad = jugador.verificarEdad()
-                if (edad > 20):
-                    jugadoresAvanzados.update(jugador.regJugador(opMenu, edad, jugadoresAvanzados))
+                if (len(partido.partidosAvanzados) > 0):
+                    print(f"El torneo ya comenzó, no se pueden registrar más participantes")
                 else:
-                    print(f"La edad no corresponde a la categoría seleccionada")
+                    edad = jugador.verificarEdad()
+                    if (edad > 20):
+                        jugadoresAvanzados.update(jugador.regJugador(opMenu, edad, jugadoresAvanzados))
+                    else:
+                        print(f"La edad no corresponde a la categoría seleccionada")
             elif (opMenu == 4):
                 isActive = False
             else:
