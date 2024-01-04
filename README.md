@@ -9,6 +9,7 @@
 	* Imprimir el valor de la variable correspondiente a la suma.
 
 * **Variables:**
+
 | Variable   |      E/S      |  Tipo de Dato |
 |----------|:-------------:|------:|
 | num | E |    int |
