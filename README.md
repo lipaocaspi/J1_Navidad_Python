@@ -5,7 +5,7 @@
 	* Crear una lista que almacene los valores de los números a ingresar.
 	* Por medio de un **while**, repetir la solicitud de ingreso de los valores hasta que los valores correspondan al tipo de dato y se ingresen 3 de ellos.
 	* Dentro del mismo **while**, verificar, haciendo uso de un **if**, que los valores ingresados sean números enteros positivos y agregarlos a la lista creada.
-	* Realizar la suma de los valores ingresados en la lista y asignarla en una variable.
+	* Realizar la suma de los valores ingresados en la lista y asignarla a una variable.
 	* Imprimir el valor de la variable correspondiente a la suma.
 
 * **Variables:**
@@ -26,7 +26,7 @@ En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 	* Calcular el IMC: $\frac{peso (Kg)}{(altura (m))^2}$
 	* Inicializar la variable de categoria.
 	* Crear un lista que almacene los datos ingresados y calculados.
-	* Haciendo uso de un **if**, asignar el nombre de la categoría correspondiente, teniendo en cuenta el valor del IMC.
+	* Haciendo uso de un **if**, asignar el nombre de la categoría correspondiente, teniendo en cuenta el valor calculado del IMC.
 	* Imprimir los datos solicitados (nombre, edad, IMC y categoría).
 
 * **Variables:**
@@ -38,7 +38,7 @@ En el archivo [01_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | peso |    E  |   float |
 | altura | E |    float |
 | imc |    E  |   float |
-| categoria | S |    float |
+| categoria | S |    str |
 | estudiante | S |    list |
 
 En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/02_principiante.py) se encuentra el código.
@@ -55,8 +55,8 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 		* Inicializar la variable de categoria.
 		* Crear un lista que almacene los datos ingresados y calculados.
 		* Agregar la lista creada a la lista estudiantes.
-		* Haciendo uso de un **if**, asignar el nombre de la categoría correspondiente, teniendo en cuenta el valor del IMC y sumar 1 al valor de la variable correspondiente a la categoría.
-	* Imprimir los datos solicitados (nombre, edad, IMC y categoría).
+		* Haciendo uso de un **if**, asignar el nombre de la categoría correspondiente, teniendo en cuenta el valor del IMC y sumar 1 al valor de la variable correspondiente al conteo de cada categoría.
+	* Imprimir el reporte de la cantidad de estudiantes que hay en cada categoría.
 
 * **Variables:**
 
@@ -67,7 +67,7 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 | peso |    E  |   float |
 | altura | E |    float |
 | imc |    S  |   float |
-| categoria | S |    float |
+| categoria | S |    str |
 | estudiante | S |    list |
 | estudiantes |    S  |   list |
 | contadorIdeal | S |    int |
@@ -79,7 +79,7 @@ En el archivo [02_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_python/blob/main/03_principiante.py) se encuentra el código.
 
 #### 4. Análisis:
-* **Problema:** recibir n números enteros positivos, y al recibir un número entero negativo, mostrar un reporte de la cantidad de números registrados y el promedio de los pares e impares.
+* **Problema:** recibir n números enteros positivos, y al recibir un número entero negativo, mostrar un reporte de la cantidad de números registrados teniendo en cuenta varias condiciones, y el promedio de los pares e impares.
 * **Cómo:** 
 	* Crear una lista para almacenar cada uno de los números, dependiendo de:
 		* Total de números ingresados.
@@ -88,8 +88,9 @@ En el archivo [03_principiante.py](https://github.com/lipaocaspi/J1_navidad_pyth
 		* Total de números menores a 10.
 		* Total de números entre 20 y 50.
 		* Total de números mayores que 100.
-	* Pedir al usuario que ingrese un número entero positivo, y por medio de un **while** y un **try-except**, verificar que el tipo de dato sea correcto.
-	* Si el tipo de dato es correcto, se verifica por medio de **if** si es par o impar, así como si es menor de 10, está entre 20 y 50, o es mayor a 100. Se agrega a la lista correspondiente.
+	* Dentro de un **while**, pedir al usuario que ingrese un número entero positivo, y por medio de un **try-except**, verificar que el tipo de dato sea correcto.
+	* Si el tipo de dato es correcto, se verifica por medio de varios **if** si es par o impar, así como si es menor de 10, está entre 20 y 50, o es mayor a 100. Se agrega a la lista correspondiente.
+   	* Si el número ingresado es negativo, se detiene la iteración **while**.
 	* Para calcular el promedio de los números pares e impares:
 		* promedioPares = $\frac{sum(paresIngresados)}{len(paresIngresados)}$
 	
