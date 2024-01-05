@@ -2,30 +2,27 @@ sismos = []
 indice = -1
 promedio = 0
 riesgo = ""
-isIncorrect = True
+isFound = True
 headerC = """
 ***********************************************
-REGISTRO DE CIUDADES
+*           REGISTRO DE CIUDADES              *
 ***********************************************
 """
 
 def regCiudad() -> list:
-    global isIncorrect
+    global isIncorrect, isFound
     isIncorrect = True
+    isFound = True
     print(headerC)
-    while (isIncorrect):
-        try:
-            codigo = input(f"Ingrese el código de la ciudad : ")
-        except ValueError:
-            print(f"Ingrese un dato correcto")
+    while (isFound):
+        codigo = input(f"Ingrese el código de la ciudad : ")
+        if (buscarId(codigo) != -1):
+            print(f"El código ya se encuentra registrado")
         else:
-            if (buscarId(codigo) != -1):
-                print(f"El código ya se encuentra registrado")
-            else:
-                ciudad = input(f"Ingrese el nombre de la ciudad : ")
-                registroCiudad = [codigo, ciudad, [], promedio, riesgo]
-                sismos.append(registroCiudad)
-                isIncorrect = False
+            ciudad = input(f"Ingrese el nombre de la ciudad : ")
+            registroCiudad = [codigo, ciudad, [], promedio, riesgo]
+            sismos.append(registroCiudad)
+            isFound = False
     return sismos
 
 def buscarId(codigoCiudad : str) -> int:

@@ -1,7 +1,7 @@
 menuP = "1. Registrar Ciudad\n2. Registrar Sismo\n3. Buscar sismos por ciudad\n4. Informe de riesgo\n5. Salir"
 header = """
 ***********************************************
-REGISTRO DE SISMOS
+*             REGISTRO DE SISMOS              *
 ***********************************************
 """
 

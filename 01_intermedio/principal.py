@@ -7,12 +7,12 @@ isActive = True
 opMenu = 0
 headerS = """
 ***********************************************
-REGISTRO DE SISMOS POR CIUDAD
+*      REGISTRO DE SISMOS POR CIUDAD          *
 ***********************************************
 """
 headerB = """
 ***********************************************
-BÚSQUEDA DE SISMOS POR CIUDAD
+*      BÚSQUEDA DE SISMOS POR CIUDAD          *
 ***********************************************
 """
 
