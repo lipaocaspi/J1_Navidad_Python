@@ -15,25 +15,38 @@ def regCiudad() -> list:
     print(headerC)
     while (isIncorrect):
         try:
-            ciudad = input(f"Ingrese el nombre de la ciudad : ").upper()
+            codigo = input(f"Ingrese el código de la ciudad : ")
         except ValueError:
             print(f"Ingrese un dato correcto")
         else:
-            registroCiudad = [ciudad, [], promedio, riesgo]
-            sismos.append(registroCiudad)
-            isIncorrect = False
+            if (buscarId(codigo) != -1):
+                print(f"El código ya se encuentra registrado")
+            else:
+                ciudad = input(f"Ingrese el nombre de la ciudad : ")
+                registroCiudad = [codigo, ciudad, [], promedio, riesgo]
+                sismos.append(registroCiudad)
+                isIncorrect = False
     return sismos
 
-def buscarCiudad(nombreCiudad : str) -> int:
+def buscarId(codigoCiudad : str) -> int:
     global indice
-    for item in sismos:
-        if nombreCiudad in item:
-            indice = sismos.index(item)
+    indice = -1
+    for i in range(len(sismos)):
+        if (codigoCiudad == sismos[i][0]):
+            indice = i
+    return indice
+
+def buscarCiudad(codigoCiudad : str) -> int:
+    global indice
+    indice = -1
+    for i in range(len(sismos)):
+        if (codigoCiudad == sismos[i][0]):
+            indice = i
             print(f"")
             print(f"REGISTRO ACTUAL DE SISMOS")
             print(f"")
-            print(f"Ciudad: {sismos[indice][0]}")
-            print(f"Sismos: {sismos[indice][1]}")
+            print(f"Ciudad: {sismos[indice][1]}")
+            print(f"Sismos: {sismos[indice][2]}")
             print(f"")
     if (indice == -1):
         print(f"No se encontró la ciudad")

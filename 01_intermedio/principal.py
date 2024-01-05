@@ -38,8 +38,8 @@ while (isActive):
         elif (opMenu == 2):
             os.system("cls")
             print(headerS)
-            nombre = input(f"Ingrese el nombre de la ciudad correspondiente al sismo que desea registrar : ").upper()
-            ciudad.buscarCiudad(nombre)
+            codigo = input(f"Ingrese el codigo de la ciudad correspondiente al sismo que desea registrar : ")
+            ciudad.buscarCiudad(codigo)
             if (ciudad.indice >= 0):
                 rta = "S"
                 while (rta in ["S", "s"]):
@@ -48,8 +48,8 @@ while (isActive):
         elif (opMenu == 3):
             os.system("cls")
             print(headerB)
-            nombre = input(f"Ingrese el nombre de la ciudad que desea buscar : ").upper()
-            ciudad.buscarCiudad(nombre)
+            codigo = input(f"Ingrese el código de la ciudad que desea buscar : ")
+            ciudad.buscarCiudad(codigo)
         elif (opMenu == 4):
             os.system("cls")
             sismo.reporte()
