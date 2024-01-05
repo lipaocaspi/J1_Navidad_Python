@@ -3,9 +3,9 @@
 import os
 
 header = """
-**************************************
-\tCÁLCULO IMC
-**************************************
+******************************************
+*  CÁLCULO IMC ESTUDIANTES CAMPUSLANDS   *
+******************************************
 """
 
 def verify(valorDato, nombreDato, tipoDato):

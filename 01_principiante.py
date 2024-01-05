@@ -7,9 +7,9 @@ isNegative = True
 suma = 0
 
 header = """
-****************************************
-SUMATORIA DE 3 NÚMEROS ENTEROS POSITIVOS
-****************************************
+********************************************
+* SUMATORIA DE 3 NÚMEROS ENTEROS POSITIVOS *
+********************************************
 """
 os.system("cls")
 print(header)

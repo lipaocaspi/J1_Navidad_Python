@@ -4,7 +4,7 @@ import os
 
 headerR = """
 ****************************************
-\tREPORTE
+*              REPORTE                 *
 ****************************************
 """
 
@@ -21,6 +21,7 @@ isPositive = True
 os.system("cls")
 
 print(f"INGRESE NÚMEROS ENTEROS POSITIVOS (CUANDO DESEE PARAR INGRESE UN NÚMERO ENTERO NEGATIVO)")
+print(f"")
 while (isPositive):
     try:
         num = int(input(f"Ingrese el número : "))
