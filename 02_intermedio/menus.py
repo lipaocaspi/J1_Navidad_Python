@@ -55,48 +55,40 @@ def menuDependencia():
                 os.system("cls")
                 print(headerCD)
                 while (isIncorrect):
-                    try:
-                        codigo = str(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
-                    except ValueError:
-                        print(f"Error en el dato de ingreso")
+                    codigo = input(f"Ingrese el código de la dependencia cuyos datos va a registrar : ")
+                    dependencias.buscarDependencia(codigo)
+                    if (dependencias.indice == -1):
+                        print(f"No se encontró dependencia")
+                        print(f"")
+                        os.system("pause")
                     else:
-                        dependencias.buscarDependencia(codigo)
-                        if (dependencias.indice == -1):
-                            print(f"No se encontró dependencia")
-                            print(f"")
-                            os.system("pause")
-                        else:
-                            rta = "S"
-                            while (rta in ["S", "s"]):
-                                dependencias.regConsumoDispositivos(dependencias.indice)
-                                rta = input(f"¿Desea registrar otro dispositivo? S(Sí) o Enter(No) : ")
-                            print(f"")
-                            os.system("pause")
+                        rta = "S"
+                        while (rta in ["S", "s"]):
+                            dependencias.regConsumoDispositivos(dependencias.indice)
+                            rta = input(f"¿Desea registrar otro dispositivo? S(Sí) o Enter(No) : ")
+                        print(f"")
                         isIncorrect = False
+                    os.system("pause")
                 print(f"")
             elif(opMenu == 2):
                 isIncorrect = True
                 os.system("cls")
                 print(headerCT)
                 while (isIncorrect):
-                    try:
-                        codigo = str(input(f"Ingrese el código de la dependencia cuyos datos va a registrar : "))
-                    except ValueError:
-                        print(f"Error en el dato de ingreso")
+                    codigo = input(f"Ingrese el código de la dependencia cuyos datos va a registrar : ")
+                    dependencias.buscarDependencia(codigo)
+                    if (dependencias.indice == -1):
+                        print(f"No se encontró dependencia")
+                        print(f"")
+                        os.system("pause")
                     else:
-                        dependencias.buscarDependencia(codigo)
-                        if (dependencias.indice == -1):
-                            print(f"No se encontró dependencia")
-                            print(f"")
-                            os.system("pause")
-                        else:
-                            rta = "S"
-                            while (rta in ["S", "s"]):
-                                dependencias.regConsumoTransporte(dependencias.indice)
-                                rta = input(f"¿Desea registrar otro transporte? S(Sí) o Enter(No) : ")
-                            print(f"")    
-                            os.system("pause")
-                        isIncorrect = False
+                        rta = "S"
+                        while (rta in ["S", "s"]):
+                            dependencias.regConsumoTransporte(dependencias.indice)
+                            rta = input(f"¿Desea registrar otro transporte? S(Sí) o Enter(No) : ")
+                        print(f"")  
+                        isIncorrect = False  
+                    os.system("pause")
             elif(opMenu == 3):
                 isActiveMenu = False
             else:

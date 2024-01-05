@@ -26,13 +26,13 @@ while (isActive):
                 indice = 0
                 isPresent = True
                 while (isPresent):
-                    codigo = dependencia.regDependencia(valor, "código", str)
+                    codigo = dependencia.regDependencia(valor, "código")
                     indice = dependencia.buscarDependencia(codigo)
                     if (indice != -1):
                         print(f"El código ya se encuentra registrado")
                     else:
                         isPresent = False
-                nombre = dependencia.regDependencia(valor, "nombre", str)
+                nombre = dependencia.regDependencia(valor, "nombre")
                 co2Producido = 0
                 dependencia.registroDependencia = [codigo, nombre, [], [], co2Producido]
                 dependencia.dependencias.append(dependencia.registroDependencia)

@@ -10,20 +10,16 @@ def buscarDependencia(codigoDepedencia : str) -> int:
             indice = dependencias.index(item)
     return indice
 
-def regDependencia(valorDato, nombreDato, tipoDato):
+def regDependencia(valorDato, nombreDato):
     global isIncorrect
-    isIncorrect = True
+    isEmpty = True
     valorDato = 0
-    while (isIncorrect):
-        try:
-            valorDato = tipoDato(input(f"Ingrese {nombreDato} de la dependencia: "))
-        except ValueError:
-            print(f"Ingrese un dato correcto")
+    while (isEmpty):
+        valorDato = input(f"Ingrese {nombreDato} de la dependencia: ")
+        if (valorDato == ""):
+            print(f"El {nombreDato} no puede estar vacío")
         else:
-            if (valorDato == ""):
-                print(f"El {nombreDato} no puede estar vacío")
-            else:
-                isIncorrect = False
+            isEmpty = False
     return valorDato
 
 def regConsumoDispositivos(indiceDependencia : int):
