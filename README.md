@@ -250,7 +250,7 @@ En el directorio [03_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 
 ## Ejercicio Avanzado
 #### 1. Análisis:
-* **Problema:** 
+* **Problema:** llevar el registro de los jugadores y los partidos de un torneo de tenis de mesa en Campus.
 * **Cómo:** 
 	* Dividir el programa en 5 módulos:
 		* categorias
