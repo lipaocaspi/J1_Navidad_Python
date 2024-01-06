@@ -302,7 +302,12 @@ En el directorio [03_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | set2J2| E | int|
 | set3J1| E | int|
 | set3J2| E | int|
-| idJ2| E | str|
+| puntosJ1S1| S | int|
+| puntosJ2S1| S | int|
+| puntosJ1S2| S | int|
+| puntosJ2S2| S | int|
+| puntosJ1S3| S | int|
+| puntosJ2S3| S | int|
 | id1| S | str|
 | id2| S | str|
 | PJ| S | int|
