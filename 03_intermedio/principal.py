@@ -30,17 +30,16 @@ while (isActive):
                 print(headerR)
                 valor = 0
                 codigo = producto.regProducto(valor, "código", str)
-                nombre = producto.regProducto(valor, "nombre", str)
+                nombre = input(f"Ingrese nombre del producto : ")
                 valorCompra = producto.regProducto(valor, "valor de compra", float)
                 valorVenta = producto.regProducto(valor, "valor de venta", float)
                 stockMin = producto.regProducto(valor, "stock mínimo", int)
                 stockMax = producto.regProducto(valor, "stock máximo", int)
                 stockActual = producto.regProducto(valor, "stock actual", int)
-                nombreProveedor = producto.regProducto(valor, "nombre del proveedor", str)
+                nombreProveedor = input(f"Ingrese nombre del proveedor del producto : ")
                 producto.productos.append(producto.registroProducto)
                 producto.registroProducto = []
                 rta = input(f"¿Desea registrar otro producto? S(Sí) o Enter(No) : ")
-                # print(producto.productos)
         elif (opMenu == 2):
             os.system("cls")
             producto.mostrarInventario()
@@ -52,20 +51,14 @@ while (isActive):
             **********************
             """
             while (rta in ["S", "s"]):
-                isIncorrect = True
                 os.system("cls")
                 print(headerA)
-                while (isIncorrect):
-                    try:
-                        codigo = str(input(f"Ingrese código del producto que desee actualizar stock : "))
-                    except ValueError:
-                        print(f"Ingrese un dato válido")
-                    else:
-                        producto.buscarProducto(codigo)
-                        if (producto.indice == -1):
-                            print(f"No se encontró el producto")
-                        isIncorrect = False
-                producto.actStock()
+                codigo = input(f"Ingrese código del producto que desee actualizar stock : ")
+                indice = producto.buscarProducto(codigo)
+                if (indice == -1):
+                    print(f"No se encontró el producto")
+                else:
+                    producto.actStock()
                 rta = input(f"¿Desea registrar otra actualización de stock? S(Sí) o Enter(No) : ")
         elif (opMenu == 4):
             os.system("cls")

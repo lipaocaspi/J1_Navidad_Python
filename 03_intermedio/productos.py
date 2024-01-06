@@ -9,7 +9,7 @@ def regProducto(valorDato, nombreDato, tipoDato):
     valorDato = 0
     while (isIncorrect):
         try:
-            valorDato = tipoDato(input(f"Ingrese {nombreDato} del producto: "))
+            valorDato = tipoDato(input(f"Ingrese {nombreDato} del producto : "))
         except ValueError:
             print(f"Ingrese un dato correcto")
         else:
