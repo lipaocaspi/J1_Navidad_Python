@@ -166,10 +166,10 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 	* **Módulo dependencias:**
 		se definen:
 		* **buscarDependencia(codigoDependencia) :** toma el código de la dependencia digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de las dependencias. Si encuentra el código de la dependencia, extrae el índice de la lista. Si no lo encuentra, devuelve un índice = -1.
-		* **regDependencia(valorDato, nombreDato, tipoDato) :** toma el valor del dato, el nombre del dato y el tipo de dato correspondiente a la dependencia y si el dato digitado es correcto, sale de la función.
-		* **regConsumoDispositivos(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la potencia del dispositivo y el tiempo de uso del dispositivo, y si los datos son correctos, calcula el valor del consumo del dispositivo: $\frac{potencia * tiempoUso}{1000}$. Agrega el valor a la primera lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
-		* **regConsumoTransporte(indiceDependencia) :** recibe el índice de la dependencia. Recibe el dato digitado de la cantidad de kilómetros recorridos por el transporte, y si el dato es correcto, agrega el valor a la segunda lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
-		* **calcularEmisiones() :** hace la sumatoria de los valores ingresados en cada lista de cada una de las dependencias y las multiplica por el factor de emisión correspondiente. Se suman los dos resultados y se imprimen la información correspondiente.
+		* **regDependencia(valorDato, nombreDato) :** toma el valor del dato y el nombre del dato correspondiente a la dependencia y, si el dato digitado es diferente a "" y es correcto, sale de la función.
+		* **regConsumoDispositivos(indiceDependencia) :** recibe el índice de la dependencia. Solicita el dato digitado de la potencia del dispositivo y el tiempo de uso del dispositivo, y si los datos son correctos, calcula el valor del consumo del dispositivo: $\frac{potencia * tiempoUso}{1000}$. Agrega el valor a la primera lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
+		* **regConsumoTransporte(indiceDependencia) :** recibe el índice de la dependencia. Solicita el dato digitado de la cantidad de kilómetros recorridos por el transporte, y si el dato es correcto, agrega el valor a la segunda lista que se encuentra dentro de la lista correspondiente al índice de la dependencia.
+		* **calcularEmisiones() :** hace la sumatoria de los valores ingresados en cada lista de cada una de las dependencias y las multiplica por el factor de emisión correspondiente. Se suman los dos resultados y se imprime la información correspondiente.
 	* **Módulo menus:**
 		se definen:
 		* **menuPrincipal() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido.
@@ -189,6 +189,7 @@ En el directorio [01_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | potencia| E | float |
 | tiempoUso| E | int|
 | kmRecorridos| E | float |
+| consumoDispositivo| S | float|
 | emiDispositivos | S | float |
 | emiTransporte | S | float|
 | emiTotal | S | float |
@@ -211,10 +212,10 @@ En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 		* principal
 	* **Módulo productos:**
 		se definen:
-		* **regProducto(valorDato, nombreDato, tipoDato) :** toma el valor del dato, el nombre del dato y el tipo de dato correspondiente al producto y si el dato digitado es correcto, sale de la función.
+		* **regProducto(valorDato, nombreDato, tipoDato) :** recibe el valor del dato, el nombre del dato y el tipo de dato correspondiente al producto y si el dato digitado es correcto, sale de la función. Si el dato digitado se trata del código del producto, se verifica que el código digitado no pertenezca a ningún producto.
 		* **mostrarInventario() :** imprime una tabla con los datos registrados de cada producto en el inventario.
-		* **buscarProducto(codigoProducto) :** toma el código del producto digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de los productos. Si encuentra el código del producto, define el índice de la lista. Si no lo encuentra, devuelve un índice = -1.
-		* **actStock() :** recibe el valor del stock que se desea añadir o restar a un producto en específico y, si el valor digitado es correcto y el cálculo del nuevo stock no es menor a 0, se actualiza el valor del stock.
+		* **buscarProducto(codigoProducto) :** recibe el código del producto digitado por el usuario y lo busca dentro de la lista que almacena todas las listas de los productos. Si encuentra el código del producto, define el índice de la lista. Si no lo encuentra, devuelve un índice = -1.
+		* **actStock() :** solicita el valor del stock que se desea añadir o restar a un producto en específico y, si el valor digitado es correcto y el cálculo del nuevo stock no es menor a 0, se actualiza el valor del stock.
 		* **imprimeInforme() :** imprime una tabla con los datos registrados de cada producto cuyo stock actual se encuentra por debajo del stock mínimo.
 		* **calGanancia() :** realiza la diferencia entre el valor de venta y valor de compra, multiplicado por el stock actual de cada producto, e imprime el valor resultante.
 	* **Módulo menu:**
@@ -238,6 +239,7 @@ En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 | stockActual| E | int|
 | nombreProveedor| E | str|
 | valorDato | E |    str|
+| stock | E |    int|
 | productos| S |    list|
 | registroProducto| S |    list|
 | suma| S |    int|
@@ -245,3 +247,78 @@ En el directorio [02_intermedio](https://github.com/lipaocaspi/J1_navidad_python
 En el directorio [03_intermedio](https://github.com/lipaocaspi/J1_navidad_python/tree/main/03_intermedio) se encuentra el código con sus respectivos módulos.
 
 ### Ejercicio Avanzado
+#### 1. Análisis:
+* **Problema:** 
+* **Cómo:** 
+	* Dividir el programa en 5 módulos:
+		* categorias
+		* jugadores
+		* menus
+  		* partidos
+		* principal
+	* **Módulo categorias:**
+		se define:
+		* **defCategoria(categoriaJ) :** recibe un número del 1 al 3. Dependiendo del valor, se asigna el nombre de la categoría.
+   	* **Módulo jugadores:**
+		se definen:
+		* **verificarEdad() :** verifica que la edad ingresada por el usuario sea un número entero.
+  		* **buscarId(codJugador, jugadores) :** recibe el código del jugador y el diccionario que contiene a los jugadores. Busca el código dentro del diccionario indicado, y si lo encuentra, extrae el valor del Id del jugador.
+   	  	* **regJugador(categoriaJugador, edadJugador, jugadores) :** recibe la categoría del jugador, la edad del jugador y el diccionario que contiene a los jugadores. Solicita el id y el nombre del jugador, verificando que los datos digitados sean diferentes a "". En el caso del id, verifica que no exista un jugador con el id digitado. Se define la categoría con la función **defCategoria(categoriaJ)** y se crea el diccionario del jugador.
+  		* **buscarJugador(codJugador, jugadores) :** recibe el código del jugador y el diccionario que contiene a los jugadores. Busca el código dentro del diccionario indicado, y si lo encuentra, extrae el valor del Id del jugador. Si no lo encuentra, imprime un mensaje al usuario.
+   	  	* **actualizarJugador(codJugador, jugadores, puntosA, partidosG, partidosP, totalP) :** recibe el código del jugador, el diccionario que contiene a los jugadores, los puntos a favor, los partidos ganados, los partidos perdidos y el total de puntos. Busca el diccionario con el código recibido, extrae los valores correspondientes y le agrega los datos recibidos. Por último, actualiza el diccionario con la nueva información.
+  		* **mostrarTabla(jugadores) :** recibe el diccionario e imprime su contenido organizado en una tabla.
+   	  	* **mostrarGanador(jugadores) :** recibe el diccionario y compara el valor correspondiente a los puntos totales de cada jugador para encontrar el mayor de ellos. Si existen varios jugadores con el mismo puntaje total, se compara el valor del los puntos a favor. Por último, se imprime el nombre del ganador.
+  	* **Módulo partidos:**
+  	  	se definen:
+  	  	* **verificarTipo(valorDato, nombreDato, tipoDato) :** recibe el valor del dato, el nombre del dato y el tipo de dato correspondiente al set y si el dato digitado es correcto, sale de la función.
+  		* **verificarPartido(id1, id2, partidos) :** recibe el valor del id del jugador 1, id del jugador 2 y el diccionario donde se encuentran guardados los partidos. Verifica que el partido que el usuario está tratando de registrar no se haya registrado anteriormente.
+  		* **regPartidos(categoria) :** recibe el número correspondiente a la categoría. Solicita los ids de los dos jugadores que se enfrentaron, verifica que los jugadores se encuentren registrados y que el partido no se haya registrado aún. Solicita el ingreso de los puntos realizados por cada jugador en cada set, realiza los respectivos cálculos y define el ganador del partido. Actualiza el registro de los jugadores y crea el diccionario del partido.
+  		* **calNumPartidos(numJugadores) :** recibe el número de jugadores que existen en la categoría y calcula el número de partidos que se deben jugar para poder finalizar el torneo: $\frac{numJugadores!}{jugadoresPorPartido! * (numJugadores - jugadoresPorPartido)!}$
+   	* **Módulo menus:**
+		se definen:
+		* **menuPrincipal() :** repite la impresión del menú principal mientras el dato ingresado no corresponda al tipo definido.
+  		* **menuRegistroJ() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido. Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos, teniendo en cuenta la edad del jugador y si el torneo ya ha comenzado.
+  		* **menuRegistroP() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido. Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos, teniendo en cuenta el número de jugadores registrados y si un partido en específico ya ha sido registrado.
+   	  	* **menuTablas() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido. Dependiendo de la opción que digite el usuario, se muestra la tabla de puntajes correspondiente a la categoría.
+  		* **menuGanadores() :** repite la impresión del menú mientras el dato ingresado no corresponda al tipo definido. Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos, teniendo en cuenta el número de jugadores registrados y si ya se registraron todos los partidos del torneo.
+	* **Módulo principal:**
+		* Haciendo uso de un **while** y un **try-except**, se muestra el menú principal.
+		* Dependiendo de la opción que digite el usuario, se llaman a las funciones creadas en los distintos módulos.
+
+* **Variables:**
+
+| Variable   |      E/S      |  Tipo de Dato |
+|----------|:-------------:|------:|
+| opMenu| E |    int |
+| id| E | str|
+| nombre| E | str|
+| edad| E | int|
+| categoria| S | str|
+| idJ1| E | str|
+| idJ2| E | str|
+| set1J1| E | int|
+| set1J2| E | int|
+| set2J1| E | int|
+| set2J2| E | int|
+| set3J1| E | int|
+| set3J2| E | int|
+| idJ2| E | str|
+| id1| S | str|
+| id2| S | str|
+| PJ| S | int|
+| PG| S | int|
+| PP| S | int|
+| PA| S | int|
+| TP| S | int|
+| maxNombre| S | str|
+| maxTP| S | int|
+| maxPA| S | int|
+| partido| S | dict|
+| partidosNovatos| S | dict|
+| partidosIntermedios| S | dict|
+| partidosAvanzados| S | dict|
+| jugadoresNovatos| S | dict|
+| jugadoresIntermedios| S | dict|
+| jugadoresAvanzados| S | dict|
+
+En el directorio [01_avanzado](https://github.com/lipaocaspi/J1_navidad_python/tree/main/01_avanzado) se encuentra el código con sus respectivos módulos.
