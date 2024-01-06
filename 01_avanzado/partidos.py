@@ -83,7 +83,7 @@ def regPartidos(categoria: int) -> dict:
         if ((puntosJ1S1 > 0 and puntosJ1S2 > 0 and puntosJ1S3 > 0) or (puntosJ1S1 > 0 and puntosJ1S2 > 0) or (puntosJ1S1 > 0 and puntosJ1S3 > 0) or (puntosJ1S2 > 0 and puntosJ1S3 > 0)):
             ganador = id1
             PA1 = puntosJ1S1 + puntosJ1S2 + puntosJ1S3
-            PA2 = puntosJ2S1 + puntosJ2S2 + puntosJ2S3
+            PA2 = 0
             PG1 = 1
             PP1 = 0
             TP1 = 2
@@ -101,7 +101,7 @@ def regPartidos(categoria: int) -> dict:
                 jugador.actualizarJugador(id2, menu.jugadoresAvanzados, PA2, PG2, PP2, TP2)
         else:
             ganador = id2
-            PA1 = puntosJ1S1 + puntosJ1S2 + puntosJ1S3
+            PA1 = 0
             PA2 = puntosJ2S1 + puntosJ2S2 + puntosJ2S3
             PG2 = 1
             PP2 = 0

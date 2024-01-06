@@ -1,4 +1,3 @@
-import os
 import categorias as categoria
 
 isIncorrect = True
@@ -76,7 +75,7 @@ def mostrarTabla(jugadores : dict):
     print(f"")
 
 def mostrarGanador(jugadores : dict):
-    maxNombre = 0
+    maxNombre = ""
     maxTP = 0
     maxPA = 0
     for item in jugadores:
